@@ -1,0 +1,15 @@
+.advertTop {
+  padding: 30px 30px 23px 30;
+  .advertTopContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  .left img {
+    width: 180px;
+    object-fit: contain;
+  }
+}
