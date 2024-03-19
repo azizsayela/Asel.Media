@@ -1,5 +1,5 @@
 .headingTitle{
-    border-top: 2px solid #ce0000;
+    border-top: 2px solid #219ed9;
     .heading{
         display: flex;
         align-items: center;
@@ -9,7 +9,7 @@
         .title{
             font-size: 18px;
             font-weight: 700;
-            color: #ce0000;
+            color: #219ed9;
             text-transform: uppercase;
         }
         .icon{
@@ -18,11 +18,11 @@
             color: #777;
             gap: 2px;
             .left:hover{
-                color: #ce0000;
+                color: #219ed9;
                 cursor: pointer;
             }
             .right:hover{
-                color: #ce0000;
+                color: #219ed9;
                 cursor: pointer;
             }
         }

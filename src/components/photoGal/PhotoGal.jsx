@@ -2,6 +2,8 @@ import React from "react";
 import HeadingTitle from "../headingTitle/HeadingTitle";
 import { MdVisibility } from "react-icons/md";
 import "./photoGal.scss";
+import BoxOption from "../boxOption/BoxOption";
+import { Photo } from "../../category";
 const PhotoGal = () => {
   return (
     <div className="photoGal">
@@ -30,6 +32,7 @@ const PhotoGal = () => {
               </div>
             </div>
           </div>
+          <BoxOption {...Photo} />
         </div>
         <div className="photoGalReader"></div>
       </div>
