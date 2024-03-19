@@ -1,0 +1,30 @@
+.headingTitle{
+    border-top: 2px solid #ce0000;
+    .heading{
+        display: flex;
+        align-items: center;
+        padding: 15px 0px;
+        justify-content: space-between;
+
+        .title{
+            font-size: 18px;
+            font-weight: 700;
+            color: #ce0000;
+            text-transform: uppercase;
+        }
+        .icon{
+            display: flex;
+            align-items: center;
+            color: #777;
+            gap: 2px;
+            .left:hover{
+                color: #ce0000;
+                cursor: pointer;
+            }
+            .right:hover{
+                color: #ce0000;
+                cursor: pointer;
+            }
+        }
+    }
+}
