@@ -11,7 +11,7 @@ import { FaInstagram } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 
 export const NavbarTop = () => {
-  const [dropDown, setdropDown] = useState(true);
+  const [dropDown, setdropDown] = useState(false);
 
   const handleDropDown = (e) => {
     setdropDown(!dropDown);
