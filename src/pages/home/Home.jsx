@@ -4,6 +4,7 @@ import { AdvertTop } from "../../components/advertTop/AdvertTop";
 import { NavBottom } from "../../components/navbarBottom/NavBottom";
 import { HotLinx } from "../../components/hotLinks/hotLinx";
 import { MainContent } from "../../components/mainContent/mainContent";
+import PhotoGal from "../../components/photoGal/PhotoGal";
 import "./home.scss";
 
 export const Home = () => {
@@ -15,6 +16,7 @@ export const Home = () => {
         <NavBottom></NavBottom>
         <HotLinx></HotLinx>
         <MainContent></MainContent>
+        <PhotoGal></PhotoGal>
       </div>
     </div>
   );

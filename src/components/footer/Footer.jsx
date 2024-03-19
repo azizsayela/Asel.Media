@@ -45,7 +45,7 @@ const Footer = () => {
                     style={{ fontSize: "15px" }}
                     className="icon"
                   />
-                  <span>Street Address, USA</span>
+                  <span>Manar 2, Tunis</span>
                 </li>
                 <li>
                   <FaRegEnvelope
