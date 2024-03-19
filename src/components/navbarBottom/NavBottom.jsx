@@ -139,7 +139,7 @@ export const NavBottom = () => {
           );
         })}
         {selectedDropdown.Index === 0 && (
-          <div className="dropDown" style={{ top: 229, left: 20 }}>
+          <div className="dropDown" style={{ left: 20, marginTop: "40px" }}>
             <span>
               <a>Home Default</a>
             </span>
@@ -152,7 +152,7 @@ export const NavBottom = () => {
           </div>
         )}
         {selectedDropdown.Index === 1 && (
-          <div className="dropDownMenu2" style={{ top: 229 }}>
+          <div className="dropDownMenu2">
             <div className="dropDownMenu2Wrapper">
               <div className="left">
                 <span className="item">All</span>
