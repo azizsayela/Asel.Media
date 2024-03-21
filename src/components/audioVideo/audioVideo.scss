@@ -1,0 +1,89 @@
+.audioVideo{
+    padding: 30px 40px 20px 40px;
+    background-color: #219ed9;
+
+    .audioVideoWrapper{
+        border-top: 2px solid white;
+        display: flex;
+        flex-direction: column;
+        .title{
+            color: white;
+        }
+        .icon{
+            color: white;
+
+            .left:hover{
+                color: #333;
+                cursor: pointer;
+            }
+            .right:hover{
+                color: #333;
+                cursor: pointer;
+            }
+        }
+        .body{
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            .videoWrapper{
+                flex: 8;
+                
+            }
+            .listWrapper{
+                flex: 4.5;
+                .list{
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    justify-content: space-between;
+                    
+                    .item{
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+
+                        .left{
+                            img{
+                                display: flex;
+                                height: 100%;
+                                width: 110px;
+                                cursor: pointer;
+                            }
+                        }
+                        .right{
+                            display: flex;
+                            flex-direction: column;
+
+                            .nav{
+                                list-style: none;
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                align-items: center;
+                                gap: 15px;
+
+                                li{
+                                    color: #f4f4f4;
+                                    cursor: pointer;
+
+                                }
+                            }
+                            h3{
+                                display: flex;
+                                font-size: 12px;
+                                font-weight: 800;
+                                color: white;
+                                cursor: pointer;
+                            }
+                        }
+                        &:hover{
+                            border-radius: 5px;
+                            background-color: rgba(0,0,0,0.25);
+                            box-shadow: inset 0 1px rgba(255,255,255,0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
