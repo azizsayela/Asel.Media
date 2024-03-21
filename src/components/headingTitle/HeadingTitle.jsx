@@ -1,3 +1,4 @@
+
 import React from "react";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import "./HeadingTitle.scss";
@@ -18,3 +19,4 @@ const HeadingTitle = ({ title }) => {
 };
 
 export default HeadingTitle;
+

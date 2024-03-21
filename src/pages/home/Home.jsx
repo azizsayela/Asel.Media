@@ -1,3 +1,4 @@
+
 import React from "react";
 import { NavbarTop } from "../../components/navbar/NavbarTop";
 import { AdvertTop } from "../../components/advertTop/AdvertTop";
@@ -23,3 +24,4 @@ export const Home = () => {
     </div>
   );
 };
+

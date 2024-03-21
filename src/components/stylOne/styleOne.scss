@@ -1,0 +1,139 @@
+.styleOne {
+  .top {
+    margin-bottom: 20px;
+    width: 370px;
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .cat {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      color: white;
+      left: 20px;
+      text-transform: uppercase;
+      background-color: #111;
+      padding: 5px 10px;
+      transition: 0.5s;
+      cursor: pointer;
+      &:hover {
+        background-color: #219ed9;
+      }
+    }
+    .icon {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 20px;
+      right: 20px;
+      background-color: #219ed9;
+      color: white;
+      padding: 5px 10px;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #111;
+      }
+    }
+    .postInfo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .nav {
+        color: white;
+        font-size: 14px;
+        margin-left: 20px;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover {
+          color: #219ed9;
+        }
+      }
+      .nav li {
+        font-weight: 600;
+      }
+      h3 {
+        padding: 0 20px 20px 20px;
+        font-size: 16px;
+        color: white;
+        font-weight: 800;
+        width: 350px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          color: #219ed9;
+        }
+      }
+    }
+  }
+  .bottom {
+    .item {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      gap: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+      .left,
+      .right {
+        display: flex;
+        flex-direction: column;
+      }
+      .thumb img {
+        width: 100%;
+        cursor: pointer;
+      }
+      .nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      li {
+        font-size: 13px;
+        color: #777;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          color: #219ed9;
+        }
+      }
+      h3 {
+        font-size: 13.5px;
+        font-weight: 700;
+        text-align: start;
+        color: #333;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover {
+          color: #219ed9;
+        }
+      }
+    }
+  }
+}
