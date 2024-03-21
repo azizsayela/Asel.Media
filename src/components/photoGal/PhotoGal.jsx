@@ -4,6 +4,7 @@ import { MdVisibility } from "react-icons/md";
 import "./photoGal.scss";
 import BoxOption from "../boxOption/BoxOption";
 import { Photo } from "../../category";
+import { FaQuoteLeft } from "react-icons/fa";
 const PhotoGal = () => {
   return (
     <div className="photoGal">
@@ -34,7 +35,64 @@ const PhotoGal = () => {
           </div>
           <BoxOption {...Photo} />
         </div>
-        <div className="photoGalReader"></div>
+        <div className="photoGalReader">
+          <HeadingTitle title="Readers Opinion" />
+          <div className="readerListWrapper">
+            <div className="readerListItem">
+              <div className="readerImg">
+                <img src="assets/readers-opinion-01.png" />
+              </div>
+              <div className="postInfo">
+                <div className="title">
+                  <h3>
+                    <FaQuoteLeft className="icon" />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                </div>
+                <ul>
+                  <li>By User24</li>
+                  <li>16 Feb 2023</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="readerListItem">
+              <div className="readerImg">
+                <img src="assets/readers-opinion-02.png" />
+              </div>
+              <div className="postInfo">
+                <div className="title">
+                  <h3>
+                    <FaQuoteLeft className="icon" />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                </div>
+                <ul>
+                  <li>By User24</li>
+                  <li>16 Feb 2023</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="readerListItem">
+              <div className="readerImg">
+                <img src="assets/readers-opinion-03.png" />
+              </div>
+              <div className="postInfo">
+                <div className="title">
+                  <h3>
+                    <FaQuoteLeft className="icon" />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                </div>
+                <ul>
+                  <li>By User24</li>
+                  <li>16 Feb 2023</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

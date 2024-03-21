@@ -75,36 +75,36 @@ const Footer = () => {
                 <li>
                   <a>
                     <FaAngleRight />
-                    Gadgets
+                    L'info en continu
                   </a>
                 </li>
                 <li>
                   <a>
-                    <FaAngleRight /> Shop
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <FaAngleRight />
-                    Term and Conditions
+                    <FaAngleRight /> L'instant ASEL
                   </a>
                 </li>
                 <li>
                   <a>
                     <FaAngleRight />
-                    Forums
+                    Diaspora
                   </a>
                 </li>
                 <li>
                   <a>
                     <FaAngleRight />
-                    Top News of This Week
+                    Tech & Co
                   </a>
                 </li>
                 <li>
                   <a>
                     <FaAngleRight />
-                    Special Recipes
+                    Sports
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <FaAngleRight />
+                    Lifestyle
                   </a>
                 </li>
                 <li>

@@ -14,14 +14,14 @@ import "./navbarBottom.scss";
 
 const Items = [
   "Home",
-  "Worlds News",
-  "Finiancial",
-  "Entertainement",
-  "Life Style",
-  "Travel",
+  "L'info en continu",
+  "L'instant ASEL",
+  "Diaspora",
+  "Tech & Co",
   "Sports",
-  "Category",
-  "Pages",
+  "Lifestyle",
+  "Contenu Sponsorisés",
+  "Contenus Partenaires",
 ];
 
 export const NavBottom = () => {
