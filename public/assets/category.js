@@ -1,3 +1,4 @@
+
 import { MdStarBorder } from "react-icons/md";
 import { MdFlashOn } from "react-icons/md";
 import { MdWhatshot } from "react-icons/md";
@@ -274,3 +275,4 @@ export const Photo = {
   image3Author: "Courtney Jones",
   image3Date: "05 Dec, 2022",
 };
+

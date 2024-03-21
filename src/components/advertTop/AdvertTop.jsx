@@ -1,6 +1,4 @@
 import React from "react";
-import logo from "../../assets/logo.png";
-import advertGif from "../../assets/advertttt.gif";
 import "./advertTop.scss";
 
 export const AdvertTop = () => {
@@ -9,12 +7,12 @@ export const AdvertTop = () => {
       <div className="advertTopContainer">
         <div className="left">
           <a>
-            <img src={logo} alt="asel Logo"></img>
+            <img src={"assets/logo.png"} alt="asel Logo"></img>
           </a>
         </div>
         <div className="right">
           <a>
-            <img src={advertGif} alt="advertismenet"></img>
+            <img src={"assets/advertttt.gif"} alt="advertismenet"></img>
           </a>
         </div>
       </div>

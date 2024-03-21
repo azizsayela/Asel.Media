@@ -1,0 +1,153 @@
+.photoGal {
+    padding: 30px 30px;
+
+    .photoGalWrapper {
+        display: flex;
+        gap: 25px;
+
+        .photoGalImg {
+            flex: 8;
+            display: flex;
+            flex-direction: column;
+            .top{
+                position: relative;
+                margin-bottom: 10px;
+                img{
+                    width: 100%;
+                    cursor: pointer;
+                }
+                .cat{
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content:center;
+                    top: 20px;
+                    left: 20px;
+                    background-color: #111;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: 500;
+                    padding: 5px 10px;
+                    text-transform: uppercase;
+                    &:hover {
+                        background-color: #219ed9;
+                        cursor: pointer;
+                    }
+                }
+                .icon{
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    top: 20px;
+                    right: 20px;
+                    background-color: #219ed9;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: 500;
+                    padding: 5px 10px;
+                    text-transform: uppercase;
+                    &:hover {
+                        background-color: #111;
+                        cursor: pointer;
+                    }
+                }
+                .postInfo{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    ul{
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        gap:15px;
+                    }
+                    .nav{
+                        color: white;
+                        font-size: 14px;
+                        margin-left: 20px;
+                        transition: 0.5s;
+
+                        &:hover{
+                            color: #219ed9;
+                        }
+                    }
+                    .nav li{
+                        font-weight: 600;
+                    }
+                    h3{
+                        padding: 10px 20px 20px 20px;
+                        width: 730px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: white;
+                        transition: 0.5s;
+                        &:hover{
+                            color: #219ed9;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        .photoGalReader {
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            
+            .readerListWrapper{
+                background-color: #F4F4F4;
+                padding: 20px 15px;
+
+                .readerListItem{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 20px;
+                    margin-bottom: 15px;
+                    border-bottom: 1px solid #eee;
+
+                    .readerImg{
+                        img{
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            border: 1px solid #333;
+                            cursor: pointer;
+                        }
+                    }
+                    .postInfo{
+                        display: flex;
+                        flex-direction: column;
+
+                        .title{
+                            h3{
+                                color: #333;
+                                font-weight: 700;
+                            }
+                            .icon{
+                                margin-right: 9px;
+                                color: #777;
+                            }
+                        }
+                        ul{
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                        }
+                        li{
+                            color: #777;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

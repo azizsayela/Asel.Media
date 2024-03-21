@@ -11,22 +11,17 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import { HiViewGrid } from "react-icons/hi";
 import { BiSearchAlt } from "react-icons/bi";
 import "./navbarBottom.scss";
-//images
-import post1 from "../../assets/post-01.jpg";
-import post2 from "../../assets/post-02.jpg";
-import post3 from "../../assets/post-03.jpg";
-import post4 from "../../assets/post-04.jpg";
 
 const Items = [
   "Home",
-  "Worlds News",
-  "Finiancial",
-  "Entertainement",
-  "Life Style",
-  "Travel",
+  "L'info en continu",
+  "L'instant ASEL",
+  "Diaspora",
+  "Tech & Co",
   "Sports",
-  "Category",
-  "Pages",
+  "Lifestyle",
+  "Contenu Sponsorisés",
+  "Contenus Partenaires",
 ];
 
 export const NavBottom = () => {
@@ -65,10 +60,12 @@ export const NavBottom = () => {
               className="item"
               onClick={() => {
                 handleDropdown(index);
-              }}>
+              }}
+            >
               <span>{item}</span>
               <MdKeyboardArrowDown
-                style={{ fontSize: "18px" }}></MdKeyboardArrowDown>
+                style={{ fontSize: "18px" }}
+              ></MdKeyboardArrowDown>
 
               {/* {selectedDropdown.Index === index && (
                 <div className="dropDown">
@@ -168,7 +165,7 @@ export const NavBottom = () => {
                       <h2 style={{ fontSize: "16px" }}>Beach</h2>
                       <MdStarBorder></MdStarBorder>
                     </div>
-                    <img src={post1}></img>
+                    <img src={"assets/post-01.jpg"}></img>
                     <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
                       Lorem ipsum dolor sit amet consectetur{" "}
                     </h2>
@@ -178,7 +175,7 @@ export const NavBottom = () => {
                       <h2 style={{ fontSize: "16px" }}> News</h2>
                       <MdVisibility></MdVisibility>
                     </div>
-                    <img src={post2}></img>
+                    <img src={"assets/post-02.jpg"}></img>
                     <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
                       Lorem ipsum dolor sit amet consectetur{" "}
                     </h2>
@@ -188,7 +185,7 @@ export const NavBottom = () => {
                       <h2 style={{ fontSize: "16px" }}> Ice Hiking</h2>
                       <MdFlashOn></MdFlashOn>
                     </div>
-                    <img src={post3}></img>
+                    <img src={"assets/post-03.jpg"}></img>
                     <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
                       Lorem ipsum dolor sit amet consectetur{" "}
                     </h2>
@@ -198,7 +195,7 @@ export const NavBottom = () => {
                       <h2 style={{ fontSize: "16px" }}> Mountain</h2>
                       <MdStarBorder></MdStarBorder>
                     </div>
-                    <img src={post4}></img>
+                    <img src={"assets/post-04.jpg"}></img>
                     <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
                       Lorem ipsum dolor sit amet consectetur{" "}
                     </h2>

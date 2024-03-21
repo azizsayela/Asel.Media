@@ -1,9 +1,4 @@
 import React from "react";
-//posts
-import usUkraine from "../../assets/usUkraine.jpg";
-import post2 from "../../assets/banner-02.jpg";
-import post3 from "../../assets/banner-03.jpg";
-import post4 from "../../assets/banner-04.jpg";
 //icons
 import {
   MdFlashOn,
@@ -45,25 +40,25 @@ export const MainContent = () => {
     <div className="mainContent">
       <div className="left">
         <PostHeader postType="Politics"></PostHeader>
-        <img src={usUkraine} alt=""></img>
+        <img src={"assets/usUkraine.jpg"} alt=""></img>
         <PostInfos></PostInfos>
       </div>
       <div className="right">
         <div className="topRight">
           <div className="topRightItem">
             <PostHeader postType="Travel"></PostHeader>
-            <img src={post2} alt=""></img>
+            <img src={"assets/banner-02.jpg"} alt=""></img>
             <PostInfos></PostInfos>
           </div>
           <div className="topRightItem">
             <PostHeader postType="Education   "></PostHeader>
-            <img src={post3} alt=""></img>
+            <img src={"assets/banner-03.jpg"} alt=""></img>
             <PostInfos></PostInfos>
           </div>
         </div>
         <div className="bottomRight">
           <PostHeader postType="Education"></PostHeader>
-          <img src={post4} alt=""></img>
+          <img src={"assets/banner-04.jpg"} alt=""></img>
           <PostInfos></PostInfos>
         </div>
       </div>

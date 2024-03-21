@@ -1,3 +1,4 @@
+
 import { MdStarBorder } from "react-icons/md";
 import { MdFlashOn } from "react-icons/md";
 import { MdWhatshot } from "react-icons/md";
@@ -9,7 +10,7 @@ export const WorldNews = {
   category: "Worlds News",
   title: "War",
   Icon: <MdFlashOn style={{ fontSize: "20px" }} />,
-  headingImg: "/assets/russia.jpg",
+  headingImg: "/assets/russia2.jpg",
   headingExcept:
     " Lorem ipsum dolor sit amet consectetur.Eum, itaque corporis.",
   headingAuthor: "Davis Miller",
@@ -274,3 +275,4 @@ export const Photo = {
   image3Author: "Courtney Jones",
   image3Date: "05 Dec, 2022",
 };
+
