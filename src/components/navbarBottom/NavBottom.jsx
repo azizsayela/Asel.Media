@@ -17,7 +17,7 @@ const Items = [
   "L'info en continu",
   "L'instant ASEL",
   "Diaspora",
-  "Tech & Co",
+  "Technology",
   "Sports",
   "Lifestyle",
   "Contenu Sponsorisés",
@@ -46,93 +46,23 @@ export const NavBottom = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(selectedDropdown.Index);
-  }, [selectedDropdown.Index]);
-
   return (
     <div className="navbarBottom" ref={dropdownRef}>
       <div className="navbarBottomWrapper">
         {Items.map((item, index) => {
           return (
-            <div
+            <a
+              style={{ color: "#FFFFFF", textDecoration: "none" }}
+              href={`${item}`}
               key={index}
               className="item"
               onClick={() => {
                 handleDropdown(index);
-              }}
-            >
+              }}>
               <span>{item}</span>
-              <MdKeyboardArrowDown
-                style={{ fontSize: "18px" }}
-              ></MdKeyboardArrowDown>
-
-              {/* {selectedDropdown.Index === index && (
-                <div className="dropDown">
-                  <span>
-                    <a>Home Default</a>
-                  </span>
-                  <span>
-                    <a>Home Boexed</a>
-                  </span>
-                  <span>
-                    <a>Home RTL boxed</a>
-                  </span>
-                </div>
-              )}
-              {selectedDropdown.Index === index && (
-                <div className="dropDown">
-                  <span>
-                    <a>Home Default</a>
-                  </span>
-                  <span>
-                    <a>Home Boexed</a>
-                  </span>
-                  <span>
-                    <a>Home RTL boxed</a>
-                  </span>
-                </div>
-              )}
-              {selectedDropdown.Index === index && (
-                <div className="dropDown">
-                  <span>
-                    <a>Home Default</a>
-                  </span>
-                  <span>
-                    <a>Home Boexed</a>
-                  </span>
-                  <span>
-                    <a>Home RTL boxed</a>
-                  </span>
-                </div>
-              )}
-              {selectedDropdown.Index === index && (
-                <div className="dropDown">
-                  <span>
-                    <a>Home Default</a>
-                  </span>
-                  <span>
-                    <a>Home Boexed</a>
-                  </span>
-                  <span>
-                    <a>Home RTL boxed</a>
-                  </span>
-                </div>
-              )}
-              {selectedDropdown.Index === index && (
-                <div className="dropDown">
-                  <span>
-                    <a>Home Default</a>
-                  </span>
-                  <span>
-                    <a>Home Boexed</a>
-                  </span>
-                  <span>
-                    <a>Home RTL boxed</a>
-                  </span>
-                </div>
-              )} */}
-            </div>
+              {/* <MdKeyboardArrowDown
+                style={{ fontSize: "18px" }}></MdKeyboardArrowDown> */}
+            </a>
           );
         })}
         {selectedDropdown.Index === 0 && (

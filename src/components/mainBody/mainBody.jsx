@@ -20,7 +20,7 @@ export const MainBody = () => {
           <StylOne {...LifeStyle}></StylOne>
         </div>
         <div className="item">
-          <StyleTwo {...Technology}></StyleTwo>
+          <StyleTwo {...HealthFitness}></StyleTwo>
         </div>
         <div className="item">
           <Widget></Widget>
