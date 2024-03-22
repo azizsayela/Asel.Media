@@ -9,6 +9,7 @@ import {
   Finance,
   Sports,
   HealthFitness,
+  LifeStyle,
 } from "../../category";
 
 export const MainBody = () => {
@@ -16,7 +17,7 @@ export const MainBody = () => {
     <div className="mainBody">
       <div className="mainBodyWrapper">
         <div className="item">
-          <StylOne {...WorldNews}></StylOne>
+          <StylOne {...LifeStyle}></StylOne>
         </div>
         <div className="item">
           <StyleTwo {...HealthFitness}></StyleTwo>
