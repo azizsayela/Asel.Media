@@ -3,7 +3,13 @@ import { StylOne } from "../stylOne/stylOne";
 import { StyleTwo } from "../styleTwo/styleTwo";
 import { Widget } from "../../components/widget/Widget";
 import "./mainBody.scss";
-import { WorldNews, Technology, Finance, Sports } from "../../category";
+import {
+  WorldNews,
+  Technology,
+  Finance,
+  Sports,
+  HealthFitness,
+} from "../../category";
 
 export const MainBody = () => {
   return (
@@ -13,7 +19,7 @@ export const MainBody = () => {
           <StylOne {...WorldNews}></StylOne>
         </div>
         <div className="item">
-          <StyleTwo {...Technology}></StyleTwo>
+          <StyleTwo {...HealthFitness}></StyleTwo>
         </div>
         <div className="item">
           <Widget></Widget>
