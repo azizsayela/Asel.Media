@@ -1,6 +1,6 @@
 import React from "react";
 import "./audioVideo.scss";
-import HeadingTitle from "../headingTitle/HeadingTitle";
+import { HeadingTitle } from "../headingTitle/HeadingTitle";
 const AudioVideo = () => {
   return (
     <div className="audioVideo">
