@@ -29,7 +29,7 @@ export const StyleTwo = ({
 }) => {
   return (
     <div className="styleTwo">
-      <HeadingTitle title={category}></HeadingTitle>
+      <HeadingTitle title={category} />
       <div className="top">
         <img src={headingImg} alt=""></img>
         <a className="cat">{title}</a>

@@ -3,14 +3,21 @@ import { StylOne } from "../stylOne/stylOne";
 import { StyleTwo } from "../styleTwo/styleTwo";
 import { Widget } from "../../components/widget/Widget";
 import "./mainBody.scss";
-import { WorldNews, Technology, Finance, Sports } from "../../category";
+import {
+  WorldNews,
+  Technology,
+  Finance,
+  Sports,
+  HealthFitness,
+  LifeStyle,
+} from "../../category";
 
 export const MainBody = () => {
   return (
     <div className="mainBody">
       <div className="mainBodyWrapper">
         <div className="item">
-          <StylOne {...WorldNews}></StylOne>
+          <StylOne {...LifeStyle}></StylOne>
         </div>
         <div className="item">
           <StyleTwo {...Technology}></StyleTwo>

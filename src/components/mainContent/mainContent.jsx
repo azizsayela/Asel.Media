@@ -7,6 +7,7 @@ import {
   MdVisibility,
 } from "react-icons/md";
 import "./mainContent.scss";
+import { HeadingTitle } from "../headingTitle/HeadingTitle";
 
 const PostHeader = ({ postType, icon }) => {
   return (
@@ -38,28 +39,123 @@ const PostInfos = ({ Author, date, intro }) => {
 export const MainContent = () => {
   return (
     <div className="mainContent">
-      <div className="left">
+      {/* <div className="left">
         <PostHeader postType="Politics"></PostHeader>
         <img src={"assets/usUkraine.jpg"} alt=""></img>
         <PostInfos></PostInfos>
-      </div>
-      <div className="right">
-        <div className="topRight">
-          <div className="topRightItem">
+      </div> */}
+
+      <div className="left">
+        <div className="topLeft">
+          <div className="topLeftItem">
             <PostHeader postType="Travel"></PostHeader>
             <img src={"assets/banner-02.jpg"} alt=""></img>
             <PostInfos></PostInfos>
           </div>
-          <div className="topRightItem">
+          <div className="topLeftItem">
             <PostHeader postType="Education   "></PostHeader>
             <img src={"assets/banner-03.jpg"} alt=""></img>
             <PostInfos></PostInfos>
           </div>
         </div>
-        <div className="bottomRight">
+        <div className="bottomLeft">
           <PostHeader postType="Education"></PostHeader>
           <img src={"assets/banner-04.jpg"} alt=""></img>
           <PostInfos></PostInfos>
+        </div>
+      </div>
+      <div className="right">
+        <HeadingTitle title="L'info en continu" />
+        <div className="postsWrapper">
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+              nesciunt.
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+              nesciunt.
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum veritatis nobis voluptates!
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum veritatis nobis voluptates!
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum veritatis nobis voluptates!
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum veritatis nobis voluptates!
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum veritatis nobis voluptates!
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum veritatis nobis voluptates!
+            </div>
+          </div>
+
+          <div className="postListItem">
+            <div className="left">
+              <h3>12:55</h3>
+            </div>
+            <div className="right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatum veritatis nobis voluptates!
+            </div>
+          </div>
         </div>
       </div>
     </div>
