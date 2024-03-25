@@ -23,7 +23,6 @@ export const AdvertTop = () => {
 
   return (
     <div className="advertTop">
-      {console.log(gifAds, "gifAdsgifAds")}
       <div className="advertTopContainer">
         <div className="left">
           <a>
