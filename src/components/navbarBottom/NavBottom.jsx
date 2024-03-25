@@ -53,19 +53,20 @@ export const NavBottom = () => {
           return (
             <a
               style={{ color: "#FFFFFF", textDecoration: "none" }}
-              href={`${item}`}
+              href={item != "Home" ? `${item}` : "/"}
               key={index}
               className="item"
               onClick={() => {
                 handleDropdown(index);
-              }}>
+              }}
+            >
               <span>{item}</span>
               {/* <MdKeyboardArrowDown
                 style={{ fontSize: "18px" }}></MdKeyboardArrowDown> */}
             </a>
           );
         })}
-        {selectedDropdown.Index === 0 && (
+        {/* {selectedDropdown.Index === 0 && (
           <div className="dropDown" style={{ left: 20, marginTop: "40px" }}>
             <span>
               <a>Home Default</a>
@@ -77,7 +78,7 @@ export const NavBottom = () => {
               <a>Home RTL boxed</a>
             </span>
           </div>
-        )}
+        )} */}
         {selectedDropdown.Index === 1 && (
           <div className="dropDownMenu2">
             <div className="dropDownMenu2Wrapper">
