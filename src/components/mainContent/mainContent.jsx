@@ -13,8 +13,16 @@ const PostHeader = ({ postType, icon }) => {
   return (
     <div className="postHeader">
       <h1 className="postType">{postType}</h1>
-      <div className="iconWrapper">
-        <MdStarBorder className="icon"></MdStarBorder>
+      <div
+        className="iconWrapper"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}>
+        <MdStarBorder
+          style={{ color: "white", fontSize: "18px" }}></MdStarBorder>
       </div>
     </div>
   );
@@ -39,12 +47,6 @@ const PostInfos = ({ Author, date, intro }) => {
 export const MainContent = () => {
   return (
     <div className="mainContent">
-      {/* <div className="left">
-        <PostHeader postType="Politics"></PostHeader>
-        <img src={"assets/usUkraine.jpg"} alt=""></img>
-        <PostInfos></PostInfos>
-      </div> */}
-
       <div className="left">
         <div className="topLeft">
           <div className="topLeftItem">

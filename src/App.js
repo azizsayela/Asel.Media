@@ -31,7 +31,7 @@ function App() {
     <Router>
       <div className="homeWrapper">
         <NavbarTop />
-        <AdvertTop />
+        {!isMobile ? <AdvertTop /> : null}
         {isMobile ? <MobileNav /> : <NavBottom />}
         {/* <HotLinx /> */}
         <Routes>
