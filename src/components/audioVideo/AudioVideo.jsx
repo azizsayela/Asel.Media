@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./audioVideo.scss";
 import { HeadingTitle } from "../headingTitle/HeadingTitle";
 const AudioVideo = () => {
+  // const videoRef = useRef(null);
+  // useEffect(() => {
+  //   if (videoRef.current) {
+  //     videoRef.current.play();
+  //   }
+  // }, []);
   return (
     <div className="audioVideo">
       <div className="audioVideoWrapper">
         <HeadingTitle title="Audio & Video" />
         <div className="body">
           <div className="videoWrapper">
-            <video width="100%" controls autoPlay loop>
+            <video width="100%" controls autoplay loop>
               <source src="/assets/newUpdate.mp4" type="video/mp4" />
             </video>
           </div>

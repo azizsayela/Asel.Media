@@ -33,6 +33,12 @@
       display: flex;
       align-items: center;
       gap: 15px;
+      transition: 0.5s;
+      .icons{
+        &:hover{
+          color: white;
+        }
+      }
     }
     .icons {
       display: flex;

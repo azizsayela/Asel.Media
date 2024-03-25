@@ -29,11 +29,11 @@ export const StyleTwo = ({
 }) => {
   return (
     <div className="styleTwo">
-      <HeadingTitle title={category}></HeadingTitle>
+      <HeadingTitle title={category} />
       <div className="top">
         <img src={headingImg} alt=""></img>
         <a className="cat">{title}</a>
-        <a className="icon">{Icon}</a>
+        <a className="postIcon">{Icon}</a>
         <div className="postInfo">
           <ul className="nav">
             <li>{headingAuthor}</li>

@@ -30,10 +30,6 @@ export const NavbarTop = () => {
             <span>21 C</span>
           </div>
           <div className="item">
-            <WiDayCloudy style={{ fontSize: "16px" }}></WiDayCloudy>
-            <span>21 C</span>
-          </div>
-          <div className="item">
             <BiCalendar style={{ fontSize: "16px" }}></BiCalendar>
             <span>Today (Monday 18 Mars 2024)</span>
           </div>
@@ -52,11 +48,14 @@ export const NavbarTop = () => {
             <BiLogoFacebookSquare
               style={{
                 fontSize: "16px",
-              }}></BiLogoFacebookSquare>
+              }}
+            ></BiLogoFacebookSquare>
             <FaInstagram
-              style={{ fontSize: "16px", cursor: "pointer" }}></FaInstagram>
+              style={{ fontSize: "16px", cursor: "pointer" }}
+            ></FaInstagram>
             <BsYoutube
-              style={{ fontSize: "16px", cursor: "pointer" }}></BsYoutube>
+              style={{ fontSize: "16px", cursor: "pointer" }}
+            ></BsYoutube>
           </div>
           {dropDown && (
             <div className="dropDownMenu">
