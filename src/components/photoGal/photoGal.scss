@@ -1,9 +1,10 @@
 .photoGal {
     padding: 30px 30px;
-
+    overflow: hidden;
     .photoGalWrapper {
         display: flex;
         gap: 25px;
+        overflow: hidden;
 
         .photoGalImg {
             flex: 8;
@@ -80,9 +81,12 @@
                     }
                     h3{
                         padding: 10px 20px 20px 20px;
-                        width: 730px;
+                        max-width: 40%;
                         font-size: 16px;
                         font-weight: 600;
+                        white-space: nowrap; /* Prevent text wrapping */
+                         overflow: hidden; /* Hide overflowing text */
+                         text-overflow: ellipsis;
                         color: white;
                         transition: 0.5s;
                         &:hover{
@@ -148,6 +152,59 @@
                     }
                 }
             }
+        }
+    }
+    @media (max-width: 1200px) {
+        .photoGalWrapper .photoGalReader .readerListWrapper .readerListItem .readerImg img{
+            width: 50px;
+            height: 50px;
+        }
+        .photoGalWrapper .photoGalReader .readerListWrapper .readerListItem .postInfo .title .icon{
+            font-size: 10px;
+        }
+        .photoGalWrapper .photoGalReader .readerListWrapper .readerListItem .postInfo .title h3{
+            font-size: 12px;
+            font-weight: 700;
+        }
+      }
+    @media only screen and (max-width: 768px) {
+        .photoGalWrapper {
+            flex-direction: column;
+        }
+        .photoGalWrapper .photoGalImg .postInfo .postInfo h3 {
+            font-size: 12px;
+            max-width: 50%;
+            padding: 0px 8px 8px 20px;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis;
+        }
+        .photoGalImg .nav li {
+            font-size: 12px;
+        }
+    }
+    @media only screen and (max-width: 468px) {
+        .photoGalWrapper {
+            flex-direction: column;
+        }
+        .photoGalWrapper .photoGalImg .top .cat{
+            font-size: 8px;
+            padding: 2px 5px;
+        }
+        .photoGalWrapper .photoGalImg .top .icon{
+            font-size: 8px;
+            padding: 2px 5px;
+        }
+        .photoGalWrapper .photoGalImg .postInfo .postInfo h3 {
+            font-size: 8px;
+            max-width: 37%;
+            padding: 0px 8px 8px 20px;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis;
+        }
+        .photoGalImg .nav li {
+            font-size: 8px;
         }
     }
 }

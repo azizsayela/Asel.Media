@@ -3,9 +3,25 @@
   .mainBodyWrapper {
     display: flex;
     gap: 25px;
-
+    margin-top: 20px;
     .item {
       flex: 4;
     }
   }
+  @media (max-width: 1200px) {
+     .mainBodyWrapper{
+      display: flex;
+      // flex-direction: column;
+     }
+
+  }
+  @media only screen and (max-width: 768px) {
+    .mainBodyWrapper{
+      display: flex;
+      flex-direction: column;
+     }
+     .wrapper{
+      display: none;
+    }
+}
 }

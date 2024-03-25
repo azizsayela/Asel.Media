@@ -86,4 +86,34 @@
             }
         }
     }
+    @media (max-width: 980px) {
+        .audioVideoWrapper .body{
+            display: flex;
+            flex-direction: column;
+        }
+        .audioVideoWrapper .body .videoWrapper video{
+            
+        }
+        .audioVideoWrapper .body .listWrapper .list .item {
+            padding-bottom: 10px;
+        }
+      }
+    @media only screen and (max-width: 468px) {
+        .audioVideoWrapper .body .listWrapper .list .item{
+            width: 100%;
+        }
+        .audioVideoWrapper .body .listWrapper .list .item .right .nav li{
+            font-size: 10px;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis;
+        }
+        .audioVideoWrapper .body .listWrapper .list .item .right h3{
+            font-size: 10px;
+            max-width: 55%;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis;
+        }    
+    }
 }
