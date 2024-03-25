@@ -1,9 +1,8 @@
-
 import React from "react";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import "./HeadingTitle.scss";
+import "./headingTitle.scss";
 
-const HeadingTitle = ({ title }) => {
+export const HeadingTitle = ({ title }) => {
   return (
     <div className="headingTitle">
       <div className="heading">
@@ -17,6 +16,3 @@ const HeadingTitle = ({ title }) => {
     </div>
   );
 };
-
-export default HeadingTitle;
-

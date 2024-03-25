@@ -1,5 +1,5 @@
 import React from "react";
-import HeadingTitle from "../headingTitle/HeadingTitle";
+import { HeadingTitle } from "../headingTitle/HeadingTitle";
 import { MdVisibility } from "react-icons/md";
 import "./photoGal.scss";
 import BoxOption from "../boxOption/BoxOption";
