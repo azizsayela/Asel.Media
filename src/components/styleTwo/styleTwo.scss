@@ -140,4 +140,30 @@
       }
     }
   }
+  @media only screen and (max-width: 768px) {
+    .top{
+      width: 100%;
+    }
+    .top .postInfo h3{
+      width: 100%;
+    }
+    .wrapper{
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 468px) {
+    
+    .top .postInfo h3{
+      font-size: 11px;
+      width: 100%;
+    }
+    .top .cat{
+      font-size: 8px;
+            padding: 2px 5px;
+    }
+    .top .icon{
+      font-size: 8px;
+            padding: 2px 5px;
+    }
+  }
 }

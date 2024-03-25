@@ -10,7 +10,6 @@ const PhotoGal = () => {
     <div className="photoGal">
       <div className="photoGalWrapper">
         <div className="photoGalImg">
-          {/* Add heading title here */}
           <HeadingTitle title={"Photo Gallery"} />
           <div className="top">
             <img src="assets/photo-gallery-01.jpg" />

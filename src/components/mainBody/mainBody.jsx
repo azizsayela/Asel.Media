@@ -26,17 +26,15 @@ export const MainBody = () => {
           <Widget></Widget>
         </div>
       </div>
-      <div style={{ marginTop: "40px" }}>
-        <div className="mainBodyWrapper">
-          <div className="item">
-            <Widget></Widget>
-          </div>
-          <div className="item">
-            <StylOne {...Finance}></StylOne>
-          </div>
-          <div className="item">
-            <StyleTwo {...Sports}></StyleTwo>
-          </div>
+      <div className="mainBodyWrapper">
+        <div className="item">
+          <Widget></Widget>
+        </div>
+        <div className="item">
+          <StylOne {...Finance}></StylOne>
+        </div>
+        <div className="item">
+          <StyleTwo {...Sports}></StyleTwo>
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 .boxOption{
     .boxOptionWrapper{
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
+
 
         .item{
             position: relative;
@@ -58,6 +59,36 @@
                 }
 
             }
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .boxOptionWrapper{
+            gap: 5px;
+        }
+        .boxOptionWrapper .item{
+            margin-bottom: 0px;
+        }
+        .boxOptionWrapper .item .postInfo .nav li{
+        font-size: 12px;
+        }
+        .boxOptionWrapper .item .postInfo h3{
+            font-size: 12px;
+            padding: 0px 8px 8px 10px;
+        }
+    }
+    @media only screen and (max-width: 468px) {
+        .boxOptionWrapper{
+            gap: 5px;
+        }
+        .boxOptionWrapper .item{
+            margin-bottom: 0px;
+        }
+        .boxOptionWrapper .item .postInfo .nav li{
+        font-size: 12px;
+        }
+        .boxOptionWrapper .item .postInfo h3{
+            font-size: 12px;
+            padding: 0px 8px 8px 10px;
         }
     }
 }
