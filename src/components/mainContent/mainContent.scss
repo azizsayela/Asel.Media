@@ -4,60 +4,69 @@
   flex-direction: row;
   gap: 50px;
   min-height: 400px;
-
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   .right {
     width: 30%;
-    .icon{
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    .icon {
       display: none;
     }
-    .postsWrapper{
-      background-color: rgba(0,0,0,0.25);
+    .postsWrapper {
+      background-color: rgba(0, 0, 0, 0.25);
       max-height: 450px;
       overflow-y: scroll;
       padding: 5px;
-      
-      .postListItem{
+      .postListItem {
         display: flex;
         flex-direction: row;
         margin: 5px 2px;
         background-color: white;
-        box-shadow: inset 0 1px rgba(255,255,255,0.3);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
         min-height: 50px;
         cursor: pointer;
-        .left{
+        .left {
           width: 20%;
+          @media (max-width: 768px) {
+            width: 10%;
+          }
           align-items: center;
           justify-content: center;
           margin-right: 5px;
           background-color: #219ed9;
-          h3{
+          h3 {
             color: white;
             font-size: 12px;
             font-weight: 600;
           }
         }
-        .right{
+        .right {
           width: 75%;
           color: #777;
           font-size: 12px;
           font-weight: 500;
           text-align: left;
           transition: 0.5s;
-          &:hover{
+          &:hover {
             color: #219ed9;
           }
         }
       }
     }
     .postsWrapper::-webkit-scrollbar {
-      display: none; /* Hide scrollbar for .postsWrapper */
+      display: none;
+    }
   }
-  }
-
   .left {
     display: flex;
     flex-direction: column;
     width: 70%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   .topLeft {
     display: flex;
@@ -86,6 +95,10 @@
     }
   }
   .postHeader {
+    @media (max-width: 768px) {
+      height: 40px;
+      padding: 0 10px;
+    }
     position: absolute;
     width: 100%;
     height: 60px;
@@ -99,21 +112,28 @@
     min-width: 90px;
     padding-top: 5px;
     padding-bottom: 5px;
+    font-size: 16px;
     background-color: #111111;
     font-weight: bold;
     color: white;
     font-size: 16px;
+    @media (max-width: 768px) {
+      font-size: 12px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+    @media (max-width: 468px) {
+      font-size: 10px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
     text-align: center;
   }
   .iconWrapper {
-    width: 40px;
+    width: 34px;
     height: 34px;
     background-color: #219ed9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     .icon {
-      font-size: 24px;
       color: white;
       cursor: pointer;
     }
@@ -125,23 +145,41 @@
     flex-direction: column;
     position: absolute;
     bottom: 20px;
+
+    @media (max-width: 768px) {
+      bottom: 4px;
+      padding: 0 10px;
+    }
     .author_date {
       display: flex;
       flex-direction: row;
       width: 100%;
       gap: 30px;
+      @media (max-width: 768px) {
+        gap: 10px;
+      }
       h2 {
         color: white;
         font-size: 14px;
+        @media (max-width: 768px) {
+          font-size: 8px;
+
+          justify-content: end;
+        }
         font-weight: bold;
       }
     }
-
     .postIntro {
       font-size: 14px;
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
       color: white;
       font-weight: bold;
       height: 50px;
+      @media (max-width: 768px) {
+        height: 30px;
+      }
       overflow-y: hidden;
     }
   }
