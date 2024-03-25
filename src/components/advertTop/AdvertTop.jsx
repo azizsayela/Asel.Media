@@ -5,7 +5,15 @@ import { ConverURLToImage } from "../../services/sanityService";
 
 export const AdvertTop = () => {
   let [gifAds, setGifAds] = useState("");
-
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -24,16 +32,20 @@ export const AdvertTop = () => {
   return (
     <div className="advertTop">
       <div className="advertTopContainer">
-        <div className="left">
-          <a>
-            <img src={"assets/logo.png"} alt="asel Logo"></img>
-          </a>
-        </div>
-        <div className="right">
-          <a>
-            <img src={gifAds} alt="advertismenet"></img>
-          </a>
-        </div>
+        {!isMobile && (
+          <div className="left">
+            <a>
+              <img src={"assets/logo.png"} alt="asel Logo"></img>
+            </a>
+          </div>
+        )}
+        {!isMobile && (
+          <div className="right">
+            <a>
+              <img src={gifAds} alt="advertismenet"></img>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

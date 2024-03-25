@@ -1,0 +1,56 @@
+.icon {
+  width: 40px;
+  height: 40px;
+  padding-bottom: 12px;
+  margin-left: 0.4rem;
+  align-self: center;
+}
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+.sideBarWrapper {
+  position: fixed;
+  z-index: 9999;
+  left: -100vw;
+  background-color: #1a2e45;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 3.5rem;
+  animation: slideIn 0.5s forwards;
+
+  @keyframes slideIn {
+    from {
+      left: -100vw;
+    }
+    to {
+      left: 0;
+    }
+  }
+  .itemWrapper {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding-left: 25px;
+      width: 400px;
+      line-height: 45px;
+      cursor: pointer;
+      transition: 0.5s;
+      color: white;
+      &:hover {
+        color: black;
+        background-color: #f8fafd;
+      }
+    }
+    a {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}

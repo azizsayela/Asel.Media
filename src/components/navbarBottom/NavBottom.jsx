@@ -58,27 +58,12 @@ export const NavBottom = () => {
               className="item"
               onClick={() => {
                 handleDropdown(index);
-              }}
-            >
+              }}>
               <span>{item}</span>
-              {/* <MdKeyboardArrowDown
-                style={{ fontSize: "18px" }}></MdKeyboardArrowDown> */}
             </a>
           );
         })}
-        {/* {selectedDropdown.Index === 0 && (
-          <div className="dropDown" style={{ left: 20, marginTop: "40px" }}>
-            <span>
-              <a>Home Default</a>
-            </span>
-            <span>
-              <a>Home Boexed</a>
-            </span>
-            <span>
-              <a>Home RTL boxed</a>
-            </span>
-          </div>
-        )} */}
+
         {selectedDropdown.Index === 1 && (
           <div className="dropDownMenu2">
             <div className="dropDownMenu2Wrapper">
