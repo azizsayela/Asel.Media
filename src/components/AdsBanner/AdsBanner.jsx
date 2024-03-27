@@ -4,7 +4,7 @@ import "./AdsBanner.scss";
 export const AdsBanner = ({ imageUrl }) => {
   return (
     <div className="adsWrapper">
-      <img src={imageUrl} style={{ objectFit: "contain" }}></img>
+      <img src={imageUrl}></img>
     </div>
   );
 };

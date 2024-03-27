@@ -22,21 +22,21 @@ export const LastNews = ({ data }) => {
         <div className="header">
           <h2>Last News update</h2>
         </div>
-        <div className="articContainer">
+        <div className="articleContainer">
           <img src={data.image1}></img>
           <div className="thumbInfo">
             <h3>{data.image1Except}</h3>
             <strong> {data.image1Date}</strong>
           </div>
         </div>
-        <div className="articContainer">
+        <div className="articleContainer">
           <img src={data.image2}></img>
           <div className="thumbInfo">
             <h3>{data.image1Except}</h3>
             <strong> {data.image1Date}</strong>
           </div>
         </div>
-        <div className="articContainer">
+        <div className="articleContainer">
           <img src={data.image4}></img>
           <div className="thumbInfo">
             <h3>{data.image1Except}</h3>

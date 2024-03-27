@@ -1,15 +1,18 @@
 import React from "react";
-import "./singlePost.scss";
 import { AdsBanner } from "../../components/AdsBanner/AdsBanner";
 import { Finance } from "../../category";
+import "./singlePost.scss";
+
 export const SinglePost = ({ post }) => {
   return (
-    <article className="container">
+    <div className="singlePostContainer">
       <AdsBanner imageUrl={"assets/Adstest2.jpg"}></AdsBanner>
       <h1>{Finance.headingExcept}</h1>
       <div className="postInfo">
         <h2>12 hours ago</h2>
-        <h3>By Bernd Debusmann Jr and Tom Bateman</h3>
+        <h3 style={{ marginTop: "6px" }}>
+          By Bernd Debusmann Jr and Tom Bateman
+        </h3>
         <div className="imageContainer">
           <img src={Finance.headingImg}></img>
         </div>
@@ -34,6 +37,6 @@ export const SinglePost = ({ post }) => {
         </p>
       </div>
       {/* <AdsBanner imageUrl={"assets/Adstest.jpg"}></AdsBanner> */}
-    </article>
+    </div>
   );
 };
