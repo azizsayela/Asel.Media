@@ -3,7 +3,7 @@
   height: 50px;
 
   .navbarContainer {
-    padding: 12.5px 30px;
+    padding: 12.5px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -69,6 +69,15 @@
           color: red;
         }
       }
+    }
+  }
+  @media only screen and (max-width: 468px) {
+    .navbarContainer .item span{
+      font-size: 11px;
+      color: white;
+      white-space: nowrap; /* Prevent text wrapping */
+      overflow: hidden; /* Hide overflowing text */
+      text-overflow: ellipsis;
     }
   }
 }
