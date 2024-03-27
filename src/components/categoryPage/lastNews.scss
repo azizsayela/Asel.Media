@@ -3,22 +3,38 @@
   flex-direction: row;
   height: 450px;
   width: 100%;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
 
   .left {
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    flex: 1.2; /* Each child will take up equal space */
-    height: 100%;
-    padding: 30px;
+
+    padding-left: 30px;
+
+    @media (max-width: 1050px) {
+      flex-direction: column;
+      padding: 5px;
+    }
   }
   .right {
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    flex: 1; /* Each child will take up equal space */
-    height: 100%;
-    padding: 30px;
+
+    padding-right: 30px;
+    padding-left: 30px;
+    @media (max-width: 1100px) {
+      padding: 5px;
+    }
+
     .header {
       width: 100%;
       height: 40px;
@@ -37,7 +53,13 @@
   .postInfo {
     padding: 30px;
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
+    @media (max-width: 1100px) {
+      bottom: 80px;
+    }
+    @media (max-width: 754px) {
+      bottom: 0px;
+    }
     .author_date {
       display: flex;
       flex-direction: row;

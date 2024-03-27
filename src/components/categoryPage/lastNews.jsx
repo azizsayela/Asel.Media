@@ -3,11 +3,12 @@ import "./lastNews.scss";
 import { Technology } from "../../category";
 
 export const LastNews = ({ data }) => {
-  console.log(data, "-");
   return (
     <div className="wrapper">
       <div className="left">
-        <img src={data.headingImg} style={{ height: "100%" }}></img>
+        <img
+          src={data.headingImg}
+          style={{ height: "100%", objectFit: "cover" }}></img>
         <div className="postInfo">
           <div className="author_date">
             <h2 className="author">{data.image1Author}</h2>

@@ -75,12 +75,12 @@ const Footer = () => {
                 <li>
                   <a>
                     <FaAngleRight />
-                    L'info en continu
+                    L'Info en continu
                   </a>
                 </li>
                 <li>
                   <a>
-                    <FaAngleRight /> L'instant ASEL
+                    <FaAngleRight /> L'Instant ASEL
                   </a>
                 </li>
                 <li>
