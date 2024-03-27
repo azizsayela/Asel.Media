@@ -1,10 +1,24 @@
+.container{
+  display: flex;
+  height: 8px;
+  align-items: center;
+  background-color: #e9e8e8;
+  justify-content:space-between;
+}
+.imageContainer img {
+  margin-top: 7px;
+  width: 70px;
+  object-fit: contain;
+}
 .icon {
-  width: 40px;
-  height: 40px;
-  padding-bottom: 12px;
-  margin-left: 0.4rem;
-  align-self: center;
-  margin-top: 18px;
+  font-size: 25px;
+  // background-color: aqua;
+  // width: 40px;
+  // height: 40px;
+  // padding-bottom: 12px;
+  // margin-left: 0.4rem;
+  // align-self: center;
+  // margin-top: 18px;
 }
 .closeIcon {
   position: absolute;

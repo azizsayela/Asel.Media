@@ -8,10 +8,8 @@ export const Widget = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const ads = await client.fetch(`*[_type == 'ad']`);
-        let convertedImage = ConverURLToImage(ads[1].image.asset._ref).url();
-        console.log(ads, "adsads");
-        console.log(convertedImage, "convertedImage");
+        const ads = await client.fetch(`*[_type == 'ad' && type == 'image']`);
+        let convertedImage = ConverURLToImage(ads[0].image.asset._ref).url();
         setImageURL(convertedImage);
       } catch (error) {
         console.error(error);

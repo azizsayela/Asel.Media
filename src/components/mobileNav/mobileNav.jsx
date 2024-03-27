@@ -10,10 +10,18 @@ export const MobileNav = () => {
   };
   return (
     <>
-      <div>
-        <AiOutlineMenu
-          className="icon"
-          onClick={handleToggleNav}></AiOutlineMenu>
+      <div className="container">
+        <div className="imageContainer">
+          <a>
+            <img src={"assets/logo.png"} alt="asel Logo"></img>
+          </a>
+        </div>
+        <div className="right">
+          <AiOutlineMenu
+            className="icon"
+            onClick={handleToggleNav}
+          ></AiOutlineMenu>
+        </div>
       </div>
       {toggleNav ? (
         <div className="sideBarWrapper">
