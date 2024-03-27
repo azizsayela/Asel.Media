@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/home/Home";
 import { Technologie } from "./pages/technology/technology.jsx";
 import { Diaspora } from "./pages/diaspora/diaspora.jsx";
-import { Sports } from "./pages/sports/sports.jsx";
+import { Sport } from "./pages/sports/sports.jsx";
 import { Lifestyle } from "./pages/lifesyle/lifestyle.jsx";
+import { SinglePost } from "./pages/singlePost/singlePost.jsx";
 
 //components
 import { NavbarTop } from "../src/components/navbar/NavbarTop.jsx";
@@ -38,8 +39,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/diaspora" element={<Diaspora />} />
           <Route path="/technology" element={<Technologie />} />
-          <Route path="/sports" element={<Sports />} />
+          <Route path="/sports" element={<Sport />} />
           <Route path="/lifestyle" element={<Lifestyle />} />
+          <Route path="/Contenu Sponsorisés" element={<SinglePost />} />
         </Routes>
         <Footer />
       </div>

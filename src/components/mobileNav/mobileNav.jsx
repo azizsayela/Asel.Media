@@ -19,8 +19,7 @@ export const MobileNav = () => {
         <div className="right">
           <AiOutlineMenu
             className="icon"
-            onClick={handleToggleNav}
-          ></AiOutlineMenu>
+            onClick={handleToggleNav}></AiOutlineMenu>
         </div>
       </div>
       {toggleNav ? (

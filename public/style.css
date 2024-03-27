@@ -5,7 +5,6 @@
   font-weight: 400;
   word-wrap: break-word;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 body {
   background-color: rgb(206, 206, 206);
