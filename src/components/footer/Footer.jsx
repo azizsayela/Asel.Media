@@ -23,8 +23,11 @@ const Footer = () => {
         <div className="footerTopWrapper">
           <div className="item">
             <div className="title">
-              <h2 className="h4">About Us</h2>
-              <FaExclamation style={{ fontSize: "18px" }} />
+              <h2 className="h4">À PROPOS DE NOUS</h2>
+              <FaExclamation
+                style={{ fontSize: "18px" }}
+                className="titleIcon"
+              />
             </div>
             <div className="about">
               <div className="content">
@@ -35,7 +38,7 @@ const Footer = () => {
               </div>
               <div className="action">
                 <a className="btn-link">
-                  Read More
+                  En savoir plus
                   <TfiAngleDoubleRight style={{ fontSize: "12px" }} />
                 </a>
               </div>
@@ -67,8 +70,8 @@ const Footer = () => {
 
           <div class="item">
             <div class="title">
-              <h2 class="h4">Usefull Info Links</h2>
-              <FaExpandAlt style={{ fontSize: "18px" }} />
+              <h2 class="h4">LIENS D'INFOS UTILES</h2>
+              <FaExpandAlt style={{ fontSize: "18px" }} className="titleIcon" />
             </div>
             <div class="links">
               <ul class="nav">
@@ -119,8 +122,11 @@ const Footer = () => {
 
           <div class="item">
             <div class="title">
-              <h2 class="h4">Advertisements</h2>
-              <BsFillMegaphoneFill style={{ fontSize: "18px" }} />
+              <h2 class="h4">ANNONCES</h2>
+              <BsFillMegaphoneFill
+                style={{ fontSize: "18px" }}
+                className="titleIcon"
+              />
             </div>
             <div class="links">
               <ul class="nav">
@@ -170,7 +176,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div class="item">
+          {/* <div class="item">
             <div class="title">
               <h2 class="h4">Career</h2>
               <FaRegUser style={{ fontSize: "18px" }} />
@@ -221,7 +227,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="footerBottom">
@@ -232,36 +238,36 @@ const Footer = () => {
             </p>
           </div>
           <div className="right">
-            <ul className="nav1">
+            {/* <ul className="nav1">
               <li>
-                <a>Home</a>
+                <a>Accueil</a>
               </li>
               <li>
-                <a>FAQ</a>
+                <a>Diaspora</a>
               </li>
               <li>
-                <a>Support</a>
+                <a>Sports</a>
               </li>
-            </ul>
+            </ul> */}
             <ul className="nav2">
               <li>
                 <a>
-                  <FaFacebookF style={{ fontSize: "18px" }} />
+                  <FaFacebookF style={{ fontSize: "16px" }} />
                 </a>
               </li>
               <li>
                 <a>
-                  <FaLinkedinIn style={{ fontSize: "18px" }} />
+                  <FaLinkedinIn style={{ fontSize: "16px" }} />
                 </a>
               </li>
               <li>
                 <a>
-                  <FaYoutube style={{ fontSize: "18px" }} />
+                  <FaYoutube style={{ fontSize: "16px" }} />
                 </a>
               </li>
               <li>
                 <a>
-                  <FaInstagram style={{ fontSize: "18px" }} />
+                  <FaInstagram style={{ fontSize: "16px" }} />
                 </a>
               </li>
             </ul>

@@ -10,7 +10,7 @@ export const MobileNav = () => {
   };
   return (
     <>
-      <div className="container">
+      <div className="navContainer">
         <div className="imageContainer">
           <a>
             <img src={"assets/logo.png"} alt="asel Logo"></img>
