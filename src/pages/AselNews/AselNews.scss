@@ -1,6 +1,15 @@
-.wrapper {
+.imageWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  img {
+    width: 400px;
+    height: auto;
+
+    @media (max-width: 768) {
+      width: 300px;
+      height: auto;
+    }
+  }
 }
