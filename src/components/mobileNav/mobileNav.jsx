@@ -19,8 +19,7 @@ export const MobileNav = () => {
         <div className="right">
           <AiOutlineMenu
             className="icon"
-            onClick={handleToggleNav}
-          ></AiOutlineMenu>
+            onClick={handleToggleNav}></AiOutlineMenu>
         </div>
       </div>
       {toggleNav ? (
@@ -31,10 +30,10 @@ export const MobileNav = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/">L'info en continu</a>
+              <a href="/technology">L'info en continu</a>
             </li>
             <li>
-              <a>L'instant ASEL</a>
+              <a href="/L'instant ASEL">L'instant ASEL</a>
             </li>
             <li>
               <a href="/diaspora">Diaspora</a>
@@ -52,7 +51,7 @@ export const MobileNav = () => {
               <a href="/Contenu Sponsorisés">Contenu Sponsorisés</a>
             </li>
             <li>
-              <a>Contenus Partenaires</a>
+              <a href="/Contenus Partenaires">Contenus Partenaires</a>
             </li>
           </ul>
         </div>

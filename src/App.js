@@ -7,6 +7,10 @@ import { Diaspora } from "./pages/diaspora/diaspora.jsx";
 import { Sport } from "./pages/sports/sports.jsx";
 import { Lifestyle } from "./pages/lifesyle/lifestyle.jsx";
 import { SinglePost } from "./pages/singlePost/singlePost.jsx";
+import { Partenariat } from "./pages/Partenariat/Partenariat.jsx";
+import { ContenuSpons } from "./pages/contenuSpons/ContenuSpons.jsx";
+import { AselNews } from "./pages/AselNews/AselNews.jsx";
+import { InfoContinue } from "./pages/infoContinue/InfoContinue.jsx";
 
 //components
 import { NavbarTop } from "../src/components/navbar/NavbarTop.jsx";
@@ -42,6 +46,9 @@ function App() {
           <Route path="/sports" element={<Sport />} />
           <Route path="/lifestyle" element={<Lifestyle />} />
           <Route path="/Contenu Sponsorisés" element={<SinglePost />} />
+          <Route path="/Contenus Partenaires" element={<ContenuSpons />} />
+          <Route path="/L'instant ASEL" element={<AselNews />} />
+          <Route path="L'info en continu" element={<InfoContinue />} />
         </Routes>
         <Footer />
       </div>

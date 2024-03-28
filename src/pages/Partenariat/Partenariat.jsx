@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Diaspora = () => {
+export const Partenariat = () => {
   return (
-    <div className="imageWrapper">
+    <div>
       <img src="assets/comingSoon.png"></img>
     </div>
   );

@@ -64,7 +64,7 @@ export const NavBottom = () => {
           );
         })}
 
-        {selectedDropdown.Index === 1 && (
+        {/* {selectedDropdown.Index === 1 && (
           <div className="dropDownMenu2">
             <div className="dropDownMenu2Wrapper">
               <div className="left">
@@ -121,7 +121,7 @@ export const NavBottom = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
         <div className="item">
           <BiSearchAlt style={{ fontSize: "18x" }}></BiSearchAlt>
         </div>
