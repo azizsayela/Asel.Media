@@ -12,14 +12,15 @@ export const MobileNav = () => {
     <>
       <div className="navContainer">
         <div className="imageContainer">
-          <a>
+          <a href="/">
             <img src={"assets/logo.png"} alt="asel Logo"></img>
           </a>
         </div>
         <div className="right">
           <AiOutlineMenu
             className="icon"
-            onClick={handleToggleNav}></AiOutlineMenu>
+            onClick={handleToggleNav}
+          ></AiOutlineMenu>
         </div>
       </div>
       {toggleNav ? (
@@ -27,28 +28,28 @@ export const MobileNav = () => {
           <IoClose className="closeIcon" onClick={handleToggleNav} />
           <ul className="itemWrapper">
             <li>
-              <a>Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a>L'info en continu</a>
+              <a href="/">L'info en continu</a>
             </li>
             <li>
               <a>L'instant ASEL</a>
             </li>
             <li>
-              <a>Diaspora</a>
+              <a href="/diaspora">Diaspora</a>
             </li>
             <li>
-              <a>Technology</a>
+              <a href="/technology">Technology</a>
             </li>
             <li>
-              <a>Sports</a>
+              <a href="/sports">Sports</a>
             </li>
             <li>
-              <a>Lifestyle</a>
+              <a href="lifestyle">Lifestyle</a>
             </li>
             <li>
-              <a>Contenu Sponsorisés</a>
+              <a href="/Contenu Sponsorisés">Contenu Sponsorisés</a>
             </li>
             <li>
               <a>Contenus Partenaires</a>

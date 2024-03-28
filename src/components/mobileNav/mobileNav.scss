@@ -1,6 +1,7 @@
 .navContainer {
   display: flex;
   height: 64px;
+  padding: 27px;
   align-items: center;
   background-color: #e9e8e8;
   justify-content: space-between;
@@ -66,6 +67,8 @@
     a {
       font-size: 18px;
       font-weight: 500;
+      text-decoration: none;
+      color: white;
     }
   }
 }
