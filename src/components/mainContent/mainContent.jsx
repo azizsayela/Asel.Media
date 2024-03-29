@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 //icons
 import {
   MdFlashOn,
@@ -8,6 +8,8 @@ import {
 } from "react-icons/md";
 import "./mainContent.scss";
 import { HeadingTitle } from "../headingTitle/HeadingTitle";
+import SanityClient from "../../sanityClient";
+import { ConverURLToImage } from "../../services/sanityService";
 
 const PostHeader = ({ postType, icon }) => {
   return (
@@ -28,42 +30,66 @@ const PostHeader = ({ postType, icon }) => {
   );
 };
 
-const PostInfos = ({ Author, date, intro }) => {
+const PostInfos = ({ date, content }) => {
   return (
     <article className="postInfoWrapper">
       <div className="author_date">
-        <h2>Molly Nagie</h2>
-        <h2>10 January 2024</h2>
+        <h2>{date?.slice(0, 10)}</h2>
       </div>
-
-      <p className="postIntro">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt esse
-        consectetur ex distinctio vel eum reprehenderit, odio, autem repudiandae
-      </p>
+      <p className="postIntro">{content}</p>
     </article>
   );
 };
 
 export const MainContent = () => {
+  const [mainArticles, setMainArticles] = useState([]);
+  const [bottomArticle, setBottomArticle] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const topArticles = await SanityClient.fetch(`
+        *[_type == "article" && section == "Home" && layoutType == "top" ]
+      `);
+        const bottomArticles = await SanityClient.fetch(`
+        *[_type == "article" && section == "Home" && layoutType == "bottom" ]
+    `);
+        setMainArticles(topArticles);
+        setBottomArticle(bottomArticles[0]);
+      } catch (error) {
+        console.log(error);
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className="mainContent">
       <div className="left">
         <div className="topLeft">
-          <div className="topLeftItem">
-            <PostHeader postType="Travel"></PostHeader>
-            <img src={"assets/banner-02.jpg"} alt=""></img>
-            <PostInfos></PostInfos>
-          </div>
-          <div className="topLeftItem">
-            <PostHeader postType="Education   "></PostHeader>
-            <img src={"assets/banner-03.jpg"} alt=""></img>
-            <PostInfos></PostInfos>
-          </div>
+          {mainArticles.map((article, index) => {
+            return (
+              <div className="topLeftItem" key={index}>
+                {/* <PostHeader postType="Politic"></PostHeader> */}
+                <img
+                  src={ConverURLToImage(article?.mainImage?.asset._ref).url()}
+                  alt=""></img>
+                <PostInfos
+                  date={article?._createdAt}
+                  content={article?.content}></PostInfos>
+              </div>
+            );
+          })}
         </div>
         <div className="bottomLeft">
-          <PostHeader postType="Education"></PostHeader>
-          <img src={"assets/banner-04.jpg"} alt=""></img>
-          <PostInfos></PostInfos>
+          {bottomArticle.mainImage && (
+            <img
+              src={ConverURLToImage(bottomArticle?.mainImage?.asset._ref).url()}
+              alt=""></img>
+          )}
+          <PostInfos
+            date={bottomArticle?.publicationDate}
+            content={bottomArticle?.content}></PostInfos>
         </div>
       </div>
       <div className="right">
