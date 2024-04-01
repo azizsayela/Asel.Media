@@ -1,54 +1,37 @@
 import React from "react";
 import "./boxOption.scss";
-const BoxOption = ({
-  image1,
-  image1Except,
-  image1Author,
-  image1Date,
-  image2,
-  image2Except,
-  image2Author,
-  image2Date,
-  image3,
-  image3Except,
-  image3Author,
-  image3Date,
-}) => {
+import { ConverURLToImage } from "../../services/sanityService";
+
+const BoxOption = ({ images, currentPage }) => {
+  // Calculate the index range of images to render based on the current page
+  const startIndex =
+    currentPage < 1
+      ? 1
+      : currentPage + 4 >= images.length - 1
+      ? images.length - 4
+      : currentPage + 4;
+  const endIndex =
+    startIndex + 3 > images.length ? images.length : startIndex + 3;
+
   return (
     <div className="boxOption">
       <div className="boxOptionWrapper">
-        <div className="item">
-          <img src={image1}></img>
-          <div className="postInfo">
-            <ul className="nav">
-              <li>{image1Author}</li>
-              <li>{image1Date}</li>
-            </ul>
-            <h3>{image1Except}</h3>
+        {/* Render images based on the calculated index range */}
+        {images.slice(startIndex, endIndex).map((image, index) => (
+          <div className="item" key={index}>
+            <img
+              src={ConverURLToImage(image.mainImage.asset._ref).url()}
+              alt={`Image ${startIndex + index + 1}`}
+            />
+            <div className="postInfo">
+              <ul className="nav">
+                {/* <li>{image.author}</li> */}
+                <li>{image.date}</li>
+              </ul>
+              <h3>{image.title}</h3>
+            </div>
           </div>
-        </div>
-
-        <div className="item">
-          <img src={image2}></img>
-          <div className="postInfo">
-            <ul className="nav">
-              <li>{image2Author}</li>
-              <li>{image2Date}</li>
-            </ul>
-            <h3>{image2Except}</h3>
-          </div>
-        </div>
-
-        <div className="item">
-          <img src={image3}></img>
-          <div className="postInfo">
-            <ul className="nav">
-              <li>{image3Author}</li>
-              <li>{image3Date}</li>
-            </ul>
-            <h3>{image3Except}</h3>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
