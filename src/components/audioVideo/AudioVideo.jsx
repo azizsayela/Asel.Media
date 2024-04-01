@@ -1,89 +1,93 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./audioVideo.scss";
 import { HeadingTitle } from "../headingTitle/HeadingTitle";
+import client from "../../sanityClient";
+
+const fetchVideos = async () => {
+  try {
+    const videos = await client.fetch(`*[_type == 'video']`);
+    return videos;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+const getVideoUrl = (assetRef) => {
+  return `https://cdn.sanity.io/files/1tsp9brm/production/${
+    assetRef.split("-")[1]
+  }.mp4`;
+};
+
 const AudioVideo = () => {
-  // const videoRef = useRef(null);
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     videoRef.current.play();
-  //   }
-  // }, []);
+  const [videos, setVideos] = useState([]);
+  const [currentVideoURL, setCurrentVideoURL] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    setLoading(true);
+    fetchVideos()
+      .then((videos) => {
+        setVideos(videos);
+        if (videos.length > 0) {
+          const initialVideoUrl = getVideoUrl(
+            videos[0]?.videoFile?.asset?._ref
+          );
+          setCurrentVideoURL(initialVideoUrl);
+        }
+      })
+      .catch((error) => setError("Failed to fetch videos"))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
+  const handleVideoSelect = (video) => {
+    const videoUrl = getVideoUrl(video?.videoFile?.asset?._ref);
+    setCurrentVideoURL(videoUrl);
+  };
+
   return (
     <div className="audioVideo">
       <div className="audioVideoWrapper">
         <HeadingTitle title="Audio & Video" />
         <div className="body">
           <div className="videoWrapper">
-            <video width="100%" controls autoplay loop>
-              <source src="/assets/newUpdate.mp4" type="video/mp4" />
+            <video key={currentVideoURL} width="100%" autoPlay loop controls>
+              <source src={currentVideoURL} type="video/mp4" />
             </video>
           </div>
 
           <div className="listWrapper">
             <div className="list">
-              <div className="item">
-                <div className="left">
-                  <img src="assets/audio-video-01.jpg" alt="" />
-                </div>
-                <div className="right">
-                  <ul className="nav">
-                    <li>Cynthia C</li>
-                    <li>16 April 2024</li>
-                  </ul>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Libero!
-                  </h3>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="left">
-                  <img src="assets/audio-video-02.jpg" alt="" />
-                </div>
-                <div className="right">
-                  <ul className="nav">
-                    <li>Cynthia C</li>
-                    <li>16 April 2024</li>
-                  </ul>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Libero!
-                  </h3>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="left">
-                  <img src="assets/audio-video-03.jpg" alt="" />
-                </div>
-                <div className="right">
-                  <ul className="nav">
-                    <li>Cynthia C</li>
-                    <li>16 April 2024</li>
-                  </ul>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Libero!
-                  </h3>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="left">
-                  <img src="assets/audio-video-04.jpg" alt="" />
-                </div>
-                <div className="right">
-                  <ul className="nav">
-                    <li>Cynthia C</li>
-                    <li>16 April 2024</li>
-                  </ul>
-                  <h3>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Libero!
-                  </h3>
-                </div>
-              </div>
+              {videos.length > 0 &&
+                videos.map((video, index) => (
+                  <div
+                    className="item"
+                    key={index}
+                    onClick={() => handleVideoSelect(video)}
+                  >
+                    <div className="left">
+                      <video
+                        key={getVideoUrl(video?.videoFile?.asset?._ref)}
+                        width="100%"
+                      >
+                        <source
+                          src={getVideoUrl(video?.videoFile?.asset?._ref)}
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                    <div className="right">
+                      <ul className="nav">
+                        <li>{video?.publicationDate}</li>
+                      </ul>
+                      <h3>{video?.title}</h3>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

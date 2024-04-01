@@ -31,6 +31,9 @@
             }
             .listWrapper{
                 flex: 4.5;
+                max-height: 380px;
+                overflow-y: auto;
+                overflow-x: hidden;
                 .list{
                     display: flex;
                     flex-direction: column;
@@ -41,9 +44,9 @@
                         display: flex;
                         align-items: center;
                         gap: 20px;
-
+                        margin-bottom: 5px;
                         .left{
-                            img{
+                            video{
                                 display: flex;
                                 height: 100%;
                                 width: 110px;
@@ -83,6 +86,21 @@
                         }
                     }
                 }
+                &::-webkit-scrollbar {
+                    width: 10px;
+                  }
+              
+                  &::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                  }
+              
+                  &::-webkit-scrollbar-thumb {
+                    background: #888;
+                  }
+              
+                  &::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                  }
             }
         }
     }
@@ -104,16 +122,9 @@
         }
         .audioVideoWrapper .body .listWrapper .list .item .right .nav li{
             font-size: 10px;
-            white-space: nowrap; /* Prevent text wrapping */
-            overflow: hidden; /* Hide overflowing text */
-            text-overflow: ellipsis;
         }
         .audioVideoWrapper .body .listWrapper .list .item .right h3{
             font-size: 10px;
-            max-width: 55%;
-            white-space: nowrap; /* Prevent text wrapping */
-            overflow: hidden; /* Hide overflowing text */
-            text-overflow: ellipsis;
         }    
     }
 }
