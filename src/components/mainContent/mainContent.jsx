@@ -10,6 +10,7 @@ import "./mainContent.scss";
 import { HeadingTitle } from "../headingTitle/HeadingTitle";
 import SanityClient from "../../sanityClient";
 import { ConverURLToImage } from "../../services/sanityService";
+import { Link } from "react-router-dom";
 
 const PostHeader = ({ postType, icon }) => {
   return (
@@ -44,6 +45,7 @@ const PostInfos = ({ date, content }) => {
 export const MainContent = () => {
   const [mainArticles, setMainArticles] = useState([]);
   const [bottomArticle, setBottomArticle] = useState([]);
+  const [infoEnContinu, setInfoEnContinu] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,12 +55,17 @@ export const MainContent = () => {
       `);
         const bottomArticles = await SanityClient.fetch(`
         *[_type == "article" && section == "Home" && layoutType == "bottom" ]
+   
     `);
+        const infoContinue = await SanityClient.fetch(`
+    *[_type == "article" && section == "InfoEnContinu"  ]
+    `);
+
         setMainArticles(topArticles);
         setBottomArticle(bottomArticles[0]);
+        setInfoEnContinu(infoContinue);
       } catch (error) {
         console.log(error);
-        console.error(error);
       }
     };
     fetchData();
@@ -69,19 +76,21 @@ export const MainContent = () => {
         <div className="topLeft">
           {mainArticles.map((article, index) => {
             return (
-              <div className="topLeftItem" key={index}>
-                {/* <PostHeader postType="Politic"></PostHeader> */}
+              <Link
+                className="topLeftItem"
+                key={index}
+                to={`post?id=${article._id}`}>
                 <img
                   src={ConverURLToImage(article?.mainImage?.asset._ref).url()}
                   alt=""></img>
                 <PostInfos
                   date={article?._createdAt}
                   content={article?.content}></PostInfos>
-              </div>
+              </Link>
             );
           })}
         </div>
-        <div className="bottomLeft">
+        <Link className="bottomLeft" to={`post?id=${bottomArticle._id}`}>
           {bottomArticle.mainImage && (
             <img
               src={ConverURLToImage(bottomArticle?.mainImage?.asset._ref).url()}
@@ -90,100 +99,26 @@ export const MainContent = () => {
           <PostInfos
             date={bottomArticle?.publicationDate}
             content={bottomArticle?.content}></PostInfos>
-        </div>
+        </Link>
       </div>
       <div className="right">
         <HeadingTitle title="L'info en continu" />
         <div className="postsWrapper">
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              nesciunt.
-            </div>
-          </div>
+          {infoEnContinu?.map((news, index) => {
+            return (
+              <Link
+                className="postListItem"
+                key={index}
+                to={`/post?id=${news._id}`}
+                style={{ textDecoration: "none" }}>
+                <div className="left">
+                  <h3>{news._createdAt.slice(11, 16)}</h3>
+                </div>
 
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              nesciunt.
-            </div>
-          </div>
-
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum veritatis nobis voluptates!
-            </div>
-          </div>
-
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum veritatis nobis voluptates!
-            </div>
-          </div>
-
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum veritatis nobis voluptates!
-            </div>
-          </div>
-
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum veritatis nobis voluptates!
-            </div>
-          </div>
-
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum veritatis nobis voluptates!
-            </div>
-          </div>
-
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum veritatis nobis voluptates!
-            </div>
-          </div>
-
-          <div className="postListItem">
-            <div className="left">
-              <h3>12:55</h3>
-            </div>
-            <div className="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum veritatis nobis voluptates!
-            </div>
-          </div>
+                <div className="right">{news?.title}</div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -38,7 +38,7 @@ export default {
       options: {
         list: [
           {title: 'Home', value: 'Home'},
-          {title: "L'Info en continu", value: "L'Info en continu"},
+          {title: 'InfoEnContinu', value: 'InfoEnContinu'},
           {title: "L'Instant ASEL", value: "L'Instant ASEL"},
           {title: 'Diaspora', value: 'Diaspora'},
           {title: 'Tech & Co', value: 'Tech & Co'},
