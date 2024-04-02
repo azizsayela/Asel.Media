@@ -1,9 +1,11 @@
 import React from "react";
 import { HeadingTitle } from "../headingTitle/HeadingTitle";
 import "./styleTwo.scss";
-
+import { ConverURLToImage } from "../../services/sanityService";
 export const StyleTwo = ({
   category,
+  articles,
+
   headingImg,
   title,
   headingAuthor,
@@ -29,72 +31,88 @@ export const StyleTwo = ({
 }) => {
   return (
     <div className="styleTwo">
+      {console.log(articles, "articlesarticles")}
       <HeadingTitle title={category} />
-      <div className="top">
-        <img src={headingImg} alt=""></img>
-        <a className="cat">{title}</a>
-        <a className="postIcon">{Icon}</a>
-        <div className="postInfo">
-          <ul className="nav">
-            <li>{headingAuthor}</li>
-            <li>{headingDate}</li>
-          </ul>
-          <h3>{image1Except}</h3>
-        </div>
-      </div>
-      {/* ----------- single post */}
-      <div className="bottom">
-        <div className="item">
-          <div className="left">
-            <img src={image1} alt=""></img>
+      {articles && articles.length > 0 && (
+        <>
+          <div className="top">
+            <img
+              src={ConverURLToImage(articles[0]?.mainImage?.asset?._ref).url()}
+              alt=""
+            ></img>
+            <a className="cat">{category}</a>
+            {/* <a className="postIcon">{Icon}</a> */}
+            <div className="postInfo">
+              <ul className="nav">
+                <li>{headingAuthor}</li>
+                <li>{articles[0]?.publicationDate}</li>
+              </ul>
+              <h3>{articles[0].title}</h3>
+            </div>
           </div>
-          <div className="right">
-            <ul className="nav">
-              <li>{image1Author}</li>
-              <li>{image1Date}</li>
-            </ul>
-            <h3>{image1Except}</h3>
+          {/* ----------- single post */}
+          <div className="bottom">
+            {articles.slice(1, 5).map((article, index) => (
+              <div className="item" key={index}>
+                <div className="left">
+                  <img
+                    src={ConverURLToImage(
+                      article?.mainImage?.asset?._ref
+                    ).url()}
+                    alt=""
+                  />
+                </div>
+                <div className="right">
+                  <ul className="nav">
+                    {/* <li>{article.author}</li> */}
+                    <li>{article.publicationDate}</li>
+                  </ul>
+                  <h3>{article.title}</h3>
+                </div>
+              </div>
+            ))}
+
+            {/* <div className="item">
+              <div className="left">
+                <img src={image2} alt=""></img>
+              </div>
+              <div className="right">
+                <ul className="nav">
+                  <li>{image2Author}</li>
+                  <li>{image2Date}</li>
+                </ul>
+                <h3>{image2Except}</h3>
+              </div>
+            </div>
+
+            <div className="item">
+              <div className="left">
+                <img src={image3} alt=""></img>
+              </div>
+              <div className="right">
+                <ul className="nav">
+                  <li>{image3Author}</li>
+                  <li>{image3Date}</li>
+                </ul>
+                <h3>{image3Except}</h3>
+              </div>
+            </div>
+
+            <div className="item">
+              <div className="left">
+                <img src={image4} alt=""></img>
+              </div>
+              <div className="right">
+                <ul className="nav">
+                  <li>{image4Author}</li>
+                  <li>{image4Date}</li>
+                </ul>
+                <h3>{image4Except}</h3>
+              </div>
+            </div> */}
           </div>
-        </div>
-        {/* ----------- single post */}
-        <div className="item">
-          <div className="left">
-            <img src={image2} alt=""></img>
-          </div>
-          <div className="right">
-            <ul className="nav">
-              <li>{image2Author}</li>
-              <li>{image2Date}</li>
-            </ul>
-            <h3>{image2Except}</h3>
-          </div>
-        </div>
-        {/* ----------- single post */}
-        <div className="item">
-          <div className="left">
-            <img src={image3} alt=""></img>
-          </div>
-          <div className="right">
-            <ul className="nav">
-              <li>{image3Author}</li>
-              <li>{image3Date}</li>
-            </ul>
-            <h3>{image3Except}</h3>
-          </div>
-        </div>
-        <div className="item">
-          <div className="left">
-            <img src={image4} alt=""></img>
-          </div>
-          <div className="right">
-            <ul className="nav">
-              <li>{image4Author}</li>
-              <li>{image4Date}</li>
-            </ul>
-            <h3>{image4Except}</h3>
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };

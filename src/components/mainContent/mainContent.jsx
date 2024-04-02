@@ -23,9 +23,11 @@ const PostHeader = ({ postType, icon }) => {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
-        }}>
+        }}
+      >
         <MdStarBorder
-          style={{ color: "white", fontSize: "18px" }}></MdStarBorder>
+          style={{ color: "white", fontSize: "18px" }}
+        ></MdStarBorder>
       </div>
     </div>
   );
@@ -58,7 +60,7 @@ export const MainContent = () => {
    
     `);
         const infoContinue = await SanityClient.fetch(`
-    *[_type == "article" && section == "InfoEnContinu"  ]
+    *[_type == "linfoEnContinu"] | order(_updatedAt desc)
     `);
 
         setMainArticles(topArticles);
@@ -79,13 +81,16 @@ export const MainContent = () => {
               <Link
                 className="topLeftItem"
                 key={index}
-                to={`post?id=${article._id}`}>
+                to={`post?id=${article._id}`}
+              >
                 <img
                   src={ConverURLToImage(article?.mainImage?.asset._ref).url()}
-                  alt=""></img>
+                  alt=""
+                ></img>
                 <PostInfos
                   date={article?._createdAt}
-                  content={article?.content}></PostInfos>
+                  content={article?.content}
+                ></PostInfos>
               </Link>
             );
           })}
@@ -94,11 +99,13 @@ export const MainContent = () => {
           {bottomArticle.mainImage && (
             <img
               src={ConverURLToImage(bottomArticle?.mainImage?.asset._ref).url()}
-              alt=""></img>
+              alt=""
+            ></img>
           )}
           <PostInfos
             date={bottomArticle?.publicationDate}
-            content={bottomArticle?.content}></PostInfos>
+            content={bottomArticle?.content}
+          ></PostInfos>
         </Link>
       </div>
       <div className="right">
@@ -110,7 +117,8 @@ export const MainContent = () => {
                 className="postListItem"
                 key={index}
                 to={`/post?id=${news._id}`}
-                style={{ textDecoration: "none" }}>
+                style={{ textDecoration: "none" }}
+              >
                 <div className="left">
                   <h3>{news._createdAt.slice(11, 16)}</h3>
                 </div>
