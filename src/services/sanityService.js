@@ -26,3 +26,13 @@ export const FetchTechArticles = async () => {
         throw error;
     }
 }
+
+export const FetchInfoContinuArticles = async () => {
+    try {
+        const InfoContinuArticles = await sanityClient.fetch(`*[_type == 'linfoEnContinu'] | order(_updatedAt desc)`);
+        return InfoContinuArticles;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}

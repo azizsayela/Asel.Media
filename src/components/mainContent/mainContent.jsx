@@ -81,7 +81,7 @@ export const MainContent = () => {
               <Link
                 className="topLeftItem"
                 key={index}
-                to={`post?id=${article._id}&type=${article._type}`}>
+                to={`post?id=${article._id}&type=${article._type}`}
               >
                 <img
                   src={ConverURLToImage(article?.mainImage?.asset._ref).url()}
@@ -97,7 +97,8 @@ export const MainContent = () => {
         </div>
         <Link
           className="bottomLeft"
-          to={`post?id=${bottomArticle._id}&type=${bottomArticle._type}`}>
+          to={`post?id=${bottomArticle._id}&type=${bottomArticle._type}`}
+        >
           {bottomArticle.mainImage && (
             <img
               src={ConverURLToImage(bottomArticle?.mainImage?.asset._ref).url()}
@@ -121,7 +122,6 @@ export const MainContent = () => {
                 to={`/post?id=${news._id}&type=${news._type}`}
                 style={{ textDecoration: "none" }}
               >
-                style={{ textDecoration: "none" }}>
                 <div className="left">
                   <h3>{news._createdAt.slice(11, 16)}</h3>
                 </div>
