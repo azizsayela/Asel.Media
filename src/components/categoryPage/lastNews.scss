@@ -14,6 +14,9 @@
     display: flex;
     flex-direction: column;
     padding-left: 30px;
+    &:hover{
+      scale: 1.02;
+    }
     @media (max-width: 1050px) {
       flex-direction: column;
       padding: 5px;
@@ -86,8 +89,18 @@
   .articleContainer {
     display: flex;
     margin-bottom: 10px;
+    &:hover{
+      scale: 1.02;
+    }
     img {
       flex: 1;
+      max-width: 100px;
+      object-fit: contain;
+      @media (max-width: 768px) {
+        flex: 1;
+        max-width: 100px;
+        object-fit: contain;
+      }
     }
     h3 {
       margin-left: 5px;

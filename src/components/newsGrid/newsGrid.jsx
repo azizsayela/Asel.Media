@@ -1,5 +1,6 @@
 import React from "react";
 import "./newsGrid.scss";
+import { ConverURLToImage } from "../../services/sanityService";
 
 export const NewsGrid = ({ title, data }) => {
   return (
@@ -9,38 +10,19 @@ export const NewsGrid = ({ title, data }) => {
         <div className="line"></div>
       </div>
       <div className="grid">
-        <div className="post">
-          <img src={data.image1}></img>
-          <div className="date_author">
-            <h2>{data.image1Date}</h2>
-            <span>{data.image1Author}</span>
-          </div>
-          <p className="parag">{data.image1Except}</p>
-        </div>
-        <div className="post">
-          <img src={data.image2}></img>
-          <div className="date_author">
-            <h2>{data.image1Date}</h2>
-            <span>{data.image1Author}</span>
-          </div>
-          <p className="parag">{data.image1Except}</p>
-        </div>
-        <div className="post">
-          <img src={data.image3}></img>
-          <div className="date_author">
-            <h2>{data.image1Date}</h2>
-            <span>{data.image1Author}</span>
-          </div>
-          <p className="parag">{data.image1Except}</p>
-        </div>
-        <div className="post">
-          <img src={data.image4}></img>
-          <div className="date_author">
-            <h2>{data.image1Date}</h2>
-            <span>{data.image1Author}</span>
-          </div>
-          <p className="parag">{data.image1Except}</p>
-        </div>
+        {data &&
+          data.length > 0 &&
+          data.map((article, index) => (
+            <div className="post">
+              <img
+                src={ConverURLToImage(article?.mainImage?.asset?._ref).url()}
+              ></img>
+              <div className="date_author">
+                <h2>{article?.publicationDate}</h2>
+              </div>
+              <p className="parag">{article?.title}</p>
+            </div>
+          ))}
       </div>
     </div>
   );
