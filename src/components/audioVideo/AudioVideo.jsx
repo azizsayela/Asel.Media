@@ -42,7 +42,6 @@ const AudioVideo = () => {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
 
   const handleVideoSelect = (video) => {
     const videoUrl = getVideoUrl(video?.videoFile?.asset?._ref);
@@ -52,10 +51,17 @@ const AudioVideo = () => {
   return (
     <div className="audioVideo">
       <div className="audioVideoWrapper">
-        <HeadingTitle title="Audio & Video" />
+        <HeadingTitle title="ASEL mobile en Vidéo" />
         <div className="body">
           <div className="videoWrapper">
-            <video key={currentVideoURL} width="100%" autoPlay loop controls>
+            <video
+              key={currentVideoURL}
+              width="100%"
+              autoPlay
+              loop
+              controls
+              muted
+            >
               <source src={currentVideoURL} type="video/mp4" />
             </video>
           </div>
