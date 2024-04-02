@@ -18,7 +18,7 @@ export const StyleTwo = ({ category, articles, headingAuthor }) => {
             {/* <a className="postIcon">{Icon}</a> */}
             <div className="postInfo">
               <ul className="nav">
-                <li>{headingAuthor}</li>
+                {/* <li>{headingAuthor}</li> */}
                 <li>{articles[0]?.publicationDate}</li>
               </ul>
               <h3>{articles[0].title}</h3>
