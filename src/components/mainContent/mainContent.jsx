@@ -53,11 +53,11 @@ export const MainContent = () => {
     const fetchData = async () => {
       try {
         const topArticles = await SanityClient.fetch(`
-        *[_type == "article" && section == "Home" && layoutType == "top" ]
+        *[_type == "home" && layoutType == "top" ]
       `);
+
         const bottomArticles = await SanityClient.fetch(`
-        *[_type == "article" && section == "Home" && layoutType == "bottom" ]
-   
+        *[_type == "home" && layoutType == "bottom" ]
     `);
         const infoContinue = await SanityClient.fetch(`
     *[_type == "linfoEnContinu"] | order(_updatedAt desc)
@@ -81,7 +81,7 @@ export const MainContent = () => {
               <Link
                 className="topLeftItem"
                 key={index}
-                to={`post?id=${article._id}`}
+                to={`post?id=${article._id}&type=${article._type}`}>
               >
                 <img
                   src={ConverURLToImage(article?.mainImage?.asset._ref).url()}
@@ -95,7 +95,9 @@ export const MainContent = () => {
             );
           })}
         </div>
-        <Link className="bottomLeft" to={`post?id=${bottomArticle._id}`}>
+        <Link
+          className="bottomLeft"
+          to={`post?id=${bottomArticle._id}&type=${bottomArticle._type}`}>
           {bottomArticle.mainImage && (
             <img
               src={ConverURLToImage(bottomArticle?.mainImage?.asset._ref).url()}
@@ -116,9 +118,10 @@ export const MainContent = () => {
               <Link
                 className="postListItem"
                 key={index}
-                to={`/post?id=${news._id}`}
+                to={`/post?id=${news._id}&type=${news._type}`}
                 style={{ textDecoration: "none" }}
               >
+                style={{ textDecoration: "none" }}>
                 <div className="left">
                   <h3>{news._createdAt.slice(11, 16)}</h3>
                 </div>

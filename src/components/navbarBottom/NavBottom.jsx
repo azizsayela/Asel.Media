@@ -63,65 +63,6 @@ export const NavBottom = () => {
             </a>
           );
         })}
-
-        {/* {selectedDropdown.Index === 1 && (
-          <div className="dropDownMenu2">
-            <div className="dropDownMenu2Wrapper">
-              <div className="left">
-                <span className="item">All</span>
-                <span className="item">Latin America</span>
-                <span className="item">Africe</span>
-                <span className="item">Middle East</span>
-                <span className="item">Europe</span>
-              </div>
-              <div className="right">
-                <div className="topRight">
-                  <div className="item">
-                    <div className="itemHeader">
-                      <h2 style={{ fontSize: "16px" }}>Beach</h2>
-                      <MdStarBorder></MdStarBorder>
-                    </div>
-                    <img src={"assets/post-01.jpg"}></img>
-                    <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
-                      Lorem ipsum dolor sit amet consectetur{" "}
-                    </h2>
-                  </div>
-                  <div className="item">
-                    <div className="itemHeader">
-                      <h2 style={{ fontSize: "16px" }}> News</h2>
-                      <MdVisibility></MdVisibility>
-                    </div>
-                    <img src={"assets/post-02.jpg"}></img>
-                    <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
-                      Lorem ipsum dolor sit amet consectetur{" "}
-                    </h2>
-                  </div>
-                  <div className="item">
-                    <div className="itemHeader">
-                      <h2 style={{ fontSize: "16px" }}> Ice Hiking</h2>
-                      <MdFlashOn></MdFlashOn>
-                    </div>
-                    <img src={"assets/post-03.jpg"}></img>
-                    <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
-                      Lorem ipsum dolor sit amet consectetur{" "}
-                    </h2>
-                  </div>
-                  <div className="item">
-                    <div className="itemHeader">
-                      <h2 style={{ fontSize: "16px" }}> Mountain</h2>
-                      <MdStarBorder></MdStarBorder>
-                    </div>
-                    <img src={"assets/post-04.jpg"}></img>
-                    <h2 style={{ fontSize: "14px", marginTop: "8px" }}>
-                      Lorem ipsum dolor sit amet consectetur{" "}
-                    </h2>
-                  </div>
-                </div>
-                <div className="bottomRight"></div>
-              </div>
-            </div>
-          </div>
-        )} */}
         <div className="item">
           <BiSearchAlt style={{ fontSize: "18x" }}></BiSearchAlt>
         </div>
