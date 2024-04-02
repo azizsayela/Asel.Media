@@ -4,17 +4,21 @@ import { useSearchParams } from "react-router-dom";
 import "./singlePost.scss";
 import SanityClient from "../../sanityClient";
 import { ConverURLToImage } from "../../services/sanityService";
+import { useLocation } from "react-router-dom";
 
 export const SinglePost = ({}) => {
   const [searchParams] = useSearchParams();
   const [post, setPost] = useState(null);
   const titleRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const postId = searchParams.get("id");
+    const postType = searchParams.get("type");
     if (postId) {
-      const query = `*[_type == "article" && _id == $postId][0]`;
-      const params = { postId };
+      const query = `*[_type == $postType && _id == $postId][0]`;
+      const params = { postId, postType };
+      console.log(params);
       SanityClient.fetch(query, params)
         .then((data) => {
           setPost(data);
@@ -29,7 +33,6 @@ export const SinglePost = ({}) => {
       titleRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [post]);
-
   return (
     <>
       {post && (
