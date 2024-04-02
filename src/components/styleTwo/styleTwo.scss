@@ -99,6 +99,7 @@
       gap: 20px;
       padding-top: 15px;
       border-top: 1px solid #ccc;
+      text-decoration: none;
 
       .left {
         img {
@@ -141,29 +142,28 @@
     }
   }
   @media only screen and (max-width: 768px) {
-    .top{
+    .top {
       width: 100%;
     }
-    .top .postInfo h3{
+    .top .postInfo h3 {
       width: 100%;
     }
-    .wrapper{
+    .wrapper {
       display: none;
     }
   }
   @media only screen and (max-width: 468px) {
-    
-    .top .postInfo h3{
+    .top .postInfo h3 {
       font-size: 11px;
       width: 100%;
     }
-    .top .cat{
+    .top .cat {
       font-size: 8px;
-            padding: 2px 5px;
+      padding: 2px 5px;
     }
-    .top .icon{
+    .top .icon {
       font-size: 8px;
-            padding: 2px 5px;
+      padding: 2px 5px;
     }
   }
 }
