@@ -13,10 +13,7 @@ import {
 } from "../../category";
 
 // SanityServices
-import {
-  FetchSportsArticles,
-  FetchTechArticles,
-} from "../../services/sanityService";
+import { FetchNews } from "../../services/sanityService";
 
 export const MainBody = () => {
   const [sportsArticles, setSportsArticles] = useState([]);
@@ -25,9 +22,9 @@ export const MainBody = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const sportArticles = await FetchSportsArticles();
+        const sportArticles = await FetchNews("sports");
         setSportsArticles(sportArticles);
-        const techArticles = await FetchTechArticles();
+        const techArticles = await FetchNews("technology");
         setTechArticles(techArticles);
       } catch (error) {
         console.error(error);

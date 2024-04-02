@@ -5,14 +5,15 @@ import { Technology, Finance, Sports, HealthFitness } from "../../category";
 import "./sport.scss";
 
 // SanityServices
-import { FetchSportsArticles } from "../../services/sanityService";
+import { FetchNews } from "../../services/sanityService";
 
 export const Sport = () => {
   const [sportsArticles, setSportsArticles] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const sportArticles = await FetchSportsArticles();
+        const sportArticles = await FetchNews("sports");
+        console.log(sportArticles);
         setSportsArticles(sportArticles);
       } catch (error) {
         console.error(error);
