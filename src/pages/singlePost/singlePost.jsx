@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AdsBanner } from "../../components/AdsBanner/AdsBanner";
-
 import { useSearchParams } from "react-router-dom";
 import "./singlePost.scss";
 import SanityClient from "../../sanityClient";
@@ -16,10 +15,8 @@ export const SinglePost = ({}) => {
     if (postId) {
       const query = `*[_type == "article" && _id == $postId][0]`;
       const params = { postId };
-
       SanityClient.fetch(query, params)
         .then((data) => {
-          console.log(data);
           setPost(data);
         })
         .catch((error) => {

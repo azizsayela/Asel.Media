@@ -4,7 +4,7 @@
   line-height: 24px;
   font-weight: 400;
   word-wrap: break-word;
-  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 body {
   background-color: rgb(206, 206, 206);
