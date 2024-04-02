@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StylOne } from "../stylOne/stylOne";
 import { StyleTwo } from "../styleTwo/styleTwo";
 import { Widget } from "../../components/widget/Widget";
@@ -12,7 +12,30 @@ import {
   LifeStyle,
 } from "../../category";
 
+// SanityServices
+import {
+  FetchSportsArticles,
+  FetchTechArticles,
+} from "../../services/sanityService";
+
 export const MainBody = () => {
+  const [sportsArticles, setSportsArticles] = useState([]);
+  const [techArticles, setTechArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const sportArticles = await FetchSportsArticles();
+        setSportsArticles(sportArticles);
+        const techArticles = await FetchTechArticles();
+        setTechArticles(techArticles);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className="mainBody">
       <div className="mainBodyWrapper">
@@ -20,7 +43,7 @@ export const MainBody = () => {
           <StylOne {...LifeStyle}></StylOne>
         </div>
         <div className="item">
-          <StyleTwo {...HealthFitness}></StyleTwo>
+          <StyleTwo category="Tech & éco" articles={techArticles}></StyleTwo>
         </div>
         <div className="item">
           <Widget></Widget>
@@ -34,7 +57,11 @@ export const MainBody = () => {
           <StylOne {...Finance}></StylOne>
         </div>
         <div className="item">
-          <StyleTwo {...Sports}></StyleTwo>
+          <StyleTwo
+            category="Sports"
+            articles={sportsArticles}
+            // {...Sports}
+          ></StyleTwo>
         </div>
       </div>
     </div>
