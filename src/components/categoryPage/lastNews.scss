@@ -89,6 +89,7 @@
   .articleContainer {
     display: flex;
     margin-bottom: 10px;
+    text-decoration: none;
     &:hover{
       scale: 1.02;
     }
@@ -104,6 +105,7 @@
     }
     h3 {
       margin-left: 5px;
+      text-decoration: none;
     }
     strong {
       font-size: 12px;

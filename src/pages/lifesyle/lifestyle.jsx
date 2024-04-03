@@ -21,12 +21,13 @@ export const Lifestyle = () => {
 
   return (
     <>
-      <div className="imageWrapper">
+      <div className="wrapper">
         <LastNews data={infoContinuArticles}></LastNews>
       </div>
       <NewsGrid
         title="lifeStyle"
-        data={infoContinuArticles.slice(5)}></NewsGrid>
+        data={infoContinuArticles.slice(5)}
+      ></NewsGrid>
     </>
   );
 };
