@@ -179,6 +179,9 @@
       overflow: hidden; 
       text-overflow: ellipsis;
     }
+    .footerTop .footerTopWrapper .item:first-child{
+      display: none;
+    }
     .footerTop .footerTopWrapper .item .links ul li a{
       font-size: 10px;
       white-space: nowrap; 
@@ -191,8 +194,19 @@
     .footerTop .footerTopWrapper .item .about{
       font-size: 8px;
     }
+    .footerBottom{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footerBottom .footerBottomWrapper{
+      padding: 10px;
+    }
     .footerBottom .footerBottomWrapper .left p{
       font-size: 10px;
+    }
+    .footerBottom .footerBottomWrapper .left p a{
+      font-size: 11px;
     }
   }
 }

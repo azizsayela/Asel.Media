@@ -18,6 +18,8 @@ import { FetchNews } from "../../services/sanityService";
 export const MainBody = () => {
   const [sportsArticles, setSportsArticles] = useState([]);
   const [techArticles, setTechArticles] = useState([]);
+  const [diasporaArticles, setDiasporaArticles] = useState([]);
+  const [lifeStyleArticles, setLifeStyleArticles] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +28,10 @@ export const MainBody = () => {
         setSportsArticles(sportArticles);
         const techArticles = await FetchNews("technology");
         setTechArticles(techArticles);
+        const diaspoArticles = await FetchNews("diaspora");
+        setDiasporaArticles(diaspoArticles);
+        const lifeStyleArticles = await FetchNews("lifeStyle");
+        setLifeStyleArticles(lifeStyleArticles);
       } catch (error) {
         console.error(error);
       }
@@ -37,7 +43,7 @@ export const MainBody = () => {
     <div className="mainBody">
       <div className="mainBodyWrapper">
         <div className="item">
-          <StylOne {...LifeStyle}></StylOne>
+          <StylOne articles={diasporaArticles} category={"Diaspora"}></StylOne>
         </div>
         <div className="item">
           <StyleTwo category="Tech & éco" articles={techArticles}></StyleTwo>
@@ -51,7 +57,10 @@ export const MainBody = () => {
           <Widget></Widget>
         </div>
         <div className="item">
-          <StylOne {...Finance}></StylOne>
+          <StylOne
+            articles={lifeStyleArticles}
+            category={"Life Style"}
+          ></StylOne>
         </div>
         <div className="item">
           <StyleTwo
