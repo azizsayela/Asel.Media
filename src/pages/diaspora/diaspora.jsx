@@ -9,7 +9,7 @@ export const Diaspora = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const sportArticles = await FetchNews("LinfoEnContinu");
+        const sportArticles = await FetchNews("diaspora");
         setInfoContinuArticles(sportArticles);
       } catch (error) {
         console.error(error);
@@ -25,7 +25,7 @@ export const Diaspora = () => {
         <LastNews data={infoContinuArticles}></LastNews>
       </div>
       <NewsGrid
-        title="L'info en continu"
+        title="Diaspora-News"
         data={infoContinuArticles.slice(5)}></NewsGrid>
     </>
   );
